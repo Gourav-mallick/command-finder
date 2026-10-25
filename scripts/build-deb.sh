@@ -8,7 +8,7 @@ cd "$DIR"
 VERSION="0.1.0"
 ARCH="all"
 PKG_NAME="cmdx"
-STAGE_DIR="$DIR/dist/deb-staging"
+STAGE_DIR="$DIR/.deb-staging"
 DEB_FILE="$DIR/dist/${PKG_NAME}_${VERSION}_${ARCH}.deb"
 
 echo "==> Building CMDX project..."
