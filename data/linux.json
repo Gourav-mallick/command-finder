@@ -1,0 +1,1304 @@
+{
+  "commands": [
+    {
+      "id": "linux-pwd",
+      "name": "Show current directory",
+      "command": "pwd",
+      "description": "Print the full path of the current directory.",
+      "category": "File management",
+      "tags": [
+        "path",
+        "directory",
+        "location"
+      ],
+      "examples": [
+        "pwd -P"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-ls",
+      "name": "List files",
+      "command": "ls -lah",
+      "description": "List files, including hidden files, with readable sizes and details.",
+      "category": "File management",
+      "tags": [
+        "list",
+        "files",
+        "directory"
+      ],
+      "examples": [
+        "ls -lt"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-tree",
+      "name": "Show directory tree",
+      "command": "tree -L 2",
+      "description": "Display files and subdirectories as a tree.",
+      "category": "File management",
+      "tags": [
+        "tree",
+        "directory",
+        "list"
+      ],
+      "examples": [
+        "tree -a -L 3"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-mkdir",
+      "name": "Create a directory",
+      "command": "mkdir -p <directory>",
+      "description": "Create a directory and any missing parent directories.",
+      "category": "File management",
+      "tags": [
+        "directory",
+        "create"
+      ],
+      "examples": [
+        "mkdir -p logs/archive"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-touch",
+      "name": "Create an empty file",
+      "command": "touch <file>",
+      "description": "Create an empty file or update its modification time.",
+      "category": "File management",
+      "tags": [
+        "file",
+        "create"
+      ],
+      "examples": [
+        "touch notes.txt"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-cp",
+      "name": "Copy files",
+      "command": "cp -iv <source> <destination>",
+      "description": "Copy a file and ask before overwriting an existing destination.",
+      "category": "File management",
+      "tags": [
+        "copy",
+        "file"
+      ],
+      "examples": [
+        "cp -a ./project ./project-backup"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-mv",
+      "name": "Move or rename files",
+      "command": "mv -iv <source> <destination>",
+      "description": "Move or rename a file, prompting before overwriting.",
+      "category": "File management",
+      "tags": [
+        "move",
+        "rename",
+        "file"
+      ],
+      "examples": [
+        "mv old-name.txt new-name.txt"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-rm-file",
+      "name": "Remove a file",
+      "command": "rm -i <file>",
+      "description": "Remove a file after prompting for confirmation.",
+      "category": "File management",
+      "tags": [
+        "remove",
+        "delete",
+        "file"
+      ],
+      "examples": [
+        "rm -i old.log"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-rm-directory",
+      "name": "Remove a directory tree",
+      "command": "rm -ri <directory>",
+      "description": "Interactively remove a directory and its contents.",
+      "category": "File management",
+      "tags": [
+        "remove",
+        "delete",
+        "directory"
+      ],
+      "examples": [
+        "rm -ri build"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-ln",
+      "name": "Create a symbolic link",
+      "command": "ln -s <target> <link-name>",
+      "description": "Create a symbolic link pointing to a file or directory.",
+      "category": "File management",
+      "tags": [
+        "link",
+        "symlink"
+      ],
+      "examples": [
+        "ln -s /opt/tool/bin/tool ~/.local/bin/tool"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-stat",
+      "name": "Inspect file metadata",
+      "command": "stat <file>",
+      "description": "Show file size, permissions, ownership, and timestamps.",
+      "category": "File management",
+      "tags": [
+        "file",
+        "metadata",
+        "permissions"
+      ],
+      "examples": [
+        "stat ./script.sh"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-file",
+      "name": "Identify a file type",
+      "command": "file <path>",
+      "description": "Detect and print the type of a file.",
+      "category": "File management",
+      "tags": [
+        "file",
+        "type",
+        "inspect"
+      ],
+      "examples": [
+        "file download.bin"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-find",
+      "name": "Find files by name",
+      "command": "find . -type f -name \"*.log\"",
+      "description": "Find files matching a name pattern below the current directory.",
+      "category": "File management",
+      "tags": [
+        "find",
+        "files",
+        "search"
+      ],
+      "examples": [
+        "find . -type f -mtime -1"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-find-large",
+      "name": "Find large files",
+      "command": "find . -type f -size +100M -print",
+      "description": "List files larger than 100 MiB below the current directory.",
+      "category": "File management",
+      "tags": [
+        "find",
+        "large",
+        "disk"
+      ],
+      "examples": [
+        "find /var/log -type f -size +50M -print"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-du",
+      "name": "Check directory sizes",
+      "command": "du -sh *",
+      "description": "Show a readable total size for each item in the current directory.",
+      "category": "Storage",
+      "tags": [
+        "disk",
+        "size",
+        "directory"
+      ],
+      "examples": [
+        "du -h --max-depth=1 /var"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-df",
+      "name": "Check free disk space",
+      "command": "df -h",
+      "description": "Show filesystem space usage in readable units.",
+      "category": "Storage",
+      "tags": [
+        "disk",
+        "space",
+        "filesystem"
+      ],
+      "examples": [
+        "df -hT"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-lsblk",
+      "name": "List storage devices",
+      "command": "lsblk -f",
+      "description": "Show block devices, partitions, filesystems, and mount points.",
+      "category": "Storage",
+      "tags": [
+        "disk",
+        "device",
+        "partition"
+      ],
+      "examples": [
+        "lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-mounts",
+      "name": "Show mounted filesystems",
+      "command": "findmnt",
+      "description": "Display mounted filesystems and their mount options.",
+      "category": "Storage",
+      "tags": [
+        "mount",
+        "filesystem",
+        "disk"
+      ],
+      "examples": [
+        "findmnt /"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-grep",
+      "name": "Search text recursively",
+      "command": "grep -RIn \"pattern\" .",
+      "description": "Find matching text in files below the current directory.",
+      "category": "Linux",
+      "tags": [
+        "search",
+        "text",
+        "files"
+      ],
+      "examples": [
+        "grep -RIn \"TODO\" src"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-grep-context",
+      "name": "Show matches with context",
+      "command": "grep -nC 2 \"pattern\" <file>",
+      "description": "Print matching lines with two lines of context around each match.",
+      "category": "Text processing",
+      "tags": [
+        "grep",
+        "search",
+        "context"
+      ],
+      "examples": [
+        "grep -nC 2 \"ERROR\" app.log"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-rg",
+      "name": "Search source files quickly",
+      "command": "rg \"pattern\" .",
+      "description": "Recursively search files using ripgrep, if installed.",
+      "category": "Text processing",
+      "tags": [
+        "search",
+        "ripgrep",
+        "text"
+      ],
+      "examples": [
+        "rg -n \"TODO\" src"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-sed",
+      "name": "Replace text in output",
+      "command": "sed 's/old/new/g' <file>",
+      "description": "Print file contents with matching text replaced; this form does not edit the file.",
+      "category": "Text processing",
+      "tags": [
+        "sed",
+        "replace",
+        "text"
+      ],
+      "examples": [
+        "sed 's/foo/bar/g' input.txt"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-awk",
+      "name": "Print selected columns",
+      "command": "awk '{print $1}' <file>",
+      "description": "Process text by fields and print the first whitespace-separated column.",
+      "category": "Text processing",
+      "tags": [
+        "awk",
+        "columns",
+        "text"
+      ],
+      "examples": [
+        "awk -F, '{print $2}' data.csv"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-sort",
+      "name": "Sort lines",
+      "command": "sort <file>",
+      "description": "Sort lines from a file and write the result to standard output.",
+      "category": "Text processing",
+      "tags": [
+        "sort",
+        "text",
+        "lines"
+      ],
+      "examples": [
+        "sort -u names.txt"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-wc",
+      "name": "Count lines and words",
+      "command": "wc -l <file>",
+      "description": "Count lines in a file; use other flags for words and bytes.",
+      "category": "Text processing",
+      "tags": [
+        "count",
+        "lines",
+        "text"
+      ],
+      "examples": [
+        "wc -l -w README.md"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-cut",
+      "name": "Extract text columns",
+      "command": "cut -d: -f1 /etc/passwd",
+      "description": "Extract a selected delimiter-separated field from each line.",
+      "category": "Text processing",
+      "tags": [
+        "cut",
+        "columns",
+        "text"
+      ],
+      "examples": [
+        "cut -d, -f1,3 data.csv"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-uniq",
+      "name": "Find repeated lines",
+      "command": "sort <file> | uniq -c",
+      "description": "Count repeated lines after sorting input.",
+      "category": "Text processing",
+      "tags": [
+        "uniq",
+        "duplicate",
+        "count"
+      ],
+      "examples": [
+        "sort access.log | uniq -c | sort -nr"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-head",
+      "name": "Show the first lines",
+      "command": "head -n 20 <file>",
+      "description": "Print the first 20 lines of a file.",
+      "category": "Text processing",
+      "tags": [
+        "head",
+        "preview",
+        "text"
+      ],
+      "examples": [
+        "head -c 100 file.bin"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-tail",
+      "name": "Follow a log file",
+      "command": "tail -n 100 -f <file>",
+      "description": "Show recent lines and continue displaying new log entries.",
+      "category": "System administration",
+      "tags": [
+        "tail",
+        "logs",
+        "follow"
+      ],
+      "examples": [
+        "tail -f /var/log/syslog"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-less",
+      "name": "Read a file interactively",
+      "command": "less <file>",
+      "description": "Browse a text file page by page; press q to quit.",
+      "category": "Text processing",
+      "tags": [
+        "less",
+        "view",
+        "text"
+      ],
+      "examples": [
+        "less +F app.log"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-diff",
+      "name": "Compare two files",
+      "command": "diff -u <old-file> <new-file>",
+      "description": "Show line-by-line differences in unified format.",
+      "category": "Text processing",
+      "tags": [
+        "diff",
+        "compare",
+        "files"
+      ],
+      "examples": [
+        "diff -u config.old config.new"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-xargs",
+      "name": "Build commands from input",
+      "command": "<command> | xargs -r <command>",
+      "description": "Pass input items as arguments to another command; review the command before running.",
+      "category": "Text processing",
+      "tags": [
+        "xargs",
+        "pipe",
+        "arguments"
+      ],
+      "examples": [
+        "printf '%s\\n' a b | xargs -r printf '%s\\n'"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-chmod",
+      "name": "Make a script executable",
+      "command": "chmod +x ./script.sh",
+      "description": "Add execute permission to a script.",
+      "category": "Permissions",
+      "tags": [
+        "permissions",
+        "executable",
+        "chmod"
+      ],
+      "examples": [
+        "chmod 644 file.txt"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-chown",
+      "name": "Change file owner",
+      "command": "sudo chown <user>:<group> <path>",
+      "description": "Change the owner and group of a file or directory.",
+      "category": "Permissions",
+      "tags": [
+        "permissions",
+        "owner",
+        "chown"
+      ],
+      "examples": [
+        "sudo chown -R www-data:www-data /var/www/site"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-umask",
+      "name": "Show default permission mask",
+      "command": "umask -S",
+      "description": "Show the permissions removed from newly created files and directories.",
+      "category": "Permissions",
+      "tags": [
+        "permissions",
+        "umask",
+        "security"
+      ],
+      "examples": [
+        "umask 027"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-id",
+      "name": "Show user and group IDs",
+      "command": "id",
+      "description": "Display the current user's UID, GID, and group memberships.",
+      "category": "Permissions",
+      "tags": [
+        "user",
+        "groups",
+        "identity"
+      ],
+      "examples": [
+        "id <username>"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-whoami",
+      "name": "Show current username",
+      "command": "whoami",
+      "description": "Print the effective username.",
+      "category": "Linux",
+      "tags": [
+        "user",
+        "identity"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-groups",
+      "name": "List user groups",
+      "command": "groups",
+      "description": "Show the groups of the current user.",
+      "category": "Permissions",
+      "tags": [
+        "groups",
+        "user",
+        "identity"
+      ],
+      "examples": [
+        "groups <username>"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-ps",
+      "name": "List running processes",
+      "command": "ps aux",
+      "description": "Show processes for all users with resource and command details.",
+      "category": "Processes",
+      "tags": [
+        "process",
+        "list",
+        "cpu"
+      ],
+      "examples": [
+        "ps -ef --forest"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-top",
+      "name": "Monitor processes live",
+      "command": "top",
+      "description": "Interactively view processes and system resource usage.",
+      "category": "Processes",
+      "tags": [
+        "process",
+        "monitor",
+        "cpu",
+        "memory"
+      ],
+      "examples": [
+        "top -o %CPU"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-pgrep",
+      "name": "Find a process ID",
+      "command": "pgrep -a <process-name>",
+      "description": "Find process IDs and command lines matching a name.",
+      "category": "Processes",
+      "tags": [
+        "process",
+        "search",
+        "pid"
+      ],
+      "examples": [
+        "pgrep -af node"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-kill",
+      "name": "Stop a process",
+      "command": "kill -TERM <pid>",
+      "description": "Ask a process to terminate cleanly using its process ID.",
+      "category": "Processes",
+      "tags": [
+        "process",
+        "stop",
+        "signal"
+      ],
+      "examples": [
+        "kill -TERM 1234"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-kill-force",
+      "name": "Force-stop a process",
+      "command": "kill -KILL <pid>",
+      "description": "Immediately terminate a process without allowing cleanup.",
+      "category": "Processes",
+      "tags": [
+        "process",
+        "kill",
+        "force"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-free",
+      "name": "Check memory usage",
+      "command": "free -h",
+      "description": "Show total, used, and available memory in readable units.",
+      "category": "System administration",
+      "tags": [
+        "memory",
+        "ram",
+        "usage"
+      ],
+      "examples": [
+        "free -h -w"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-uptime",
+      "name": "Check system uptime",
+      "command": "uptime",
+      "description": "Show how long the system has been running and its load averages.",
+      "category": "System administration",
+      "tags": [
+        "uptime",
+        "load",
+        "system"
+      ],
+      "examples": [
+        "uptime -p"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-uname",
+      "name": "Show kernel information",
+      "command": "uname -a",
+      "description": "Print kernel name, version, and machine architecture.",
+      "category": "System administration",
+      "tags": [
+        "kernel",
+        "system",
+        "version"
+      ],
+      "examples": [
+        "uname -r"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-hostname",
+      "name": "Show host information",
+      "command": "hostnamectl",
+      "description": "Show or manage the system hostname and operating system details.",
+      "category": "System administration",
+      "tags": [
+        "hostname",
+        "system",
+        "os"
+      ],
+      "examples": [
+        "hostnamectl status"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-dmesg",
+      "name": "View kernel messages",
+      "command": "sudo dmesg --follow --human",
+      "description": "Follow kernel ring-buffer messages, useful for hardware troubleshooting.",
+      "category": "System administration",
+      "tags": [
+        "kernel",
+        "logs",
+        "hardware"
+      ],
+      "examples": [
+        "sudo dmesg --level=err,warn"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-apt-update",
+      "name": "Refresh APT package lists",
+      "command": "sudo apt update",
+      "description": "Refresh package metadata on Debian and Ubuntu systems.",
+      "category": "Package management",
+      "tags": [
+        "apt",
+        "ubuntu",
+        "debian",
+        "update"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-apt-install",
+      "name": "Install an APT package",
+      "command": "sudo apt install <package>",
+      "description": "Install a package on Debian or Ubuntu.",
+      "category": "Package management",
+      "tags": [
+        "apt",
+        "ubuntu",
+        "debian",
+        "install"
+      ],
+      "examples": [
+        "sudo apt install git"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-apt-upgrade",
+      "name": "Upgrade installed APT packages",
+      "command": "sudo apt upgrade",
+      "description": "Upgrade installed packages on Debian or Ubuntu.",
+      "category": "Package management",
+      "tags": [
+        "apt",
+        "ubuntu",
+        "debian",
+        "upgrade"
+      ],
+      "examples": [
+        "apt list --upgradable"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-apt-remove",
+      "name": "Remove an APT package",
+      "command": "sudo apt remove <package>",
+      "description": "Remove a package while keeping its configuration files.",
+      "category": "Package management",
+      "tags": [
+        "apt",
+        "ubuntu",
+        "debian",
+        "remove"
+      ],
+      "examples": [
+        "sudo apt purge <package>"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-dnf-install",
+      "name": "Install a DNF package",
+      "command": "sudo dnf install <package>",
+      "description": "Install a package on Fedora and other DNF-based distributions.",
+      "category": "Package management",
+      "tags": [
+        "dnf",
+        "fedora",
+        "install"
+      ],
+      "examples": [
+        "sudo dnf install git"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-dnf-upgrade",
+      "name": "Upgrade DNF packages",
+      "command": "sudo dnf upgrade",
+      "description": "Upgrade installed packages on Fedora and other DNF-based distributions.",
+      "category": "Package management",
+      "tags": [
+        "dnf",
+        "fedora",
+        "upgrade"
+      ],
+      "examples": [
+        "dnf check-update"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-pacman-install",
+      "name": "Install a Pacman package",
+      "command": "sudo pacman -S <package>",
+      "description": "Install a package on Arch Linux and other Pacman-based distributions.",
+      "category": "Package management",
+      "tags": [
+        "pacman",
+        "arch",
+        "install"
+      ],
+      "examples": [
+        "sudo pacman -S git"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-pacman-upgrade",
+      "name": "Upgrade Arch Linux packages",
+      "command": "sudo pacman -Syu",
+      "description": "Synchronize repositories and upgrade installed Arch Linux packages.",
+      "category": "Package management",
+      "tags": [
+        "pacman",
+        "arch",
+        "upgrade"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-timedatectl",
+      "name": "Show system clock settings",
+      "command": "timedatectl status",
+      "description": "Show the system clock, time zone, and synchronization status.",
+      "category": "System administration",
+      "tags": [
+        "time",
+        "timezone",
+        "clock"
+      ],
+      "examples": [
+        "timedatectl list-timezones"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-date",
+      "name": "Show current date and time",
+      "command": "date",
+      "description": "Print the current system date and time.",
+      "category": "Linux",
+      "tags": [
+        "date",
+        "time",
+        "clock"
+      ],
+      "examples": [
+        "date -u"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-env",
+      "name": "Show environment variables",
+      "command": "printenv",
+      "description": "Print the current environment variables.",
+      "category": "Linux",
+      "tags": [
+        "environment",
+        "variables",
+        "config"
+      ],
+      "examples": [
+        "printenv PATH"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-history",
+      "name": "Search shell history",
+      "command": "history | tail -n 30",
+      "description": "Show the most recent commands from the current shell history.",
+      "category": "Linux",
+      "tags": [
+        "shell",
+        "history",
+        "commands"
+      ],
+      "examples": [
+        "history | grep docker"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-sudo-check",
+      "name": "Check sudo permissions",
+      "command": "sudo -l",
+      "description": "List commands the current user may run with sudo.",
+      "category": "Security",
+      "tags": [
+        "sudo",
+        "permissions",
+        "security"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-reboot",
+      "name": "Reboot the computer",
+      "command": "sudo systemctl reboot",
+      "description": "Restart the Linux computer immediately.",
+      "category": "System administration",
+      "tags": [
+        "reboot",
+        "shutdown",
+        "system"
+      ],
+      "examples": [
+        "sudo reboot"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-shutdown",
+      "name": "Shut down the computer",
+      "command": "sudo systemctl poweroff",
+      "description": "Power off the Linux computer immediately.",
+      "category": "System administration",
+      "tags": [
+        "shutdown",
+        "poweroff",
+        "system"
+      ],
+      "examples": [
+        "sudo shutdown -h now"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-rsync-dry-run",
+      "name": "Preview a directory sync",
+      "command": "rsync -avhn <source>/ <destination>/",
+      "description": "Preview which files rsync would transfer without changing the destination.",
+      "category": "File management",
+      "tags": [
+        "rsync",
+        "sync",
+        "backup",
+        "preview"
+      ],
+      "examples": [
+        "rsync -avhn ./site/ user@host:/var/www/site/"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-rsync",
+      "name": "Sync directories",
+      "command": "rsync -avh <source>/ <destination>/",
+      "description": "Copy changed files while preserving common file metadata.",
+      "category": "File management",
+      "tags": [
+        "rsync",
+        "sync",
+        "backup"
+      ],
+      "examples": [
+        "rsync -avh ./site/ /backup/site/"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-fdisk-list",
+      "name": "Inspect disk partitions",
+      "command": "sudo fdisk -l",
+      "description": "List disks and partition tables without modifying them.",
+      "category": "Storage",
+      "tags": [
+        "disk",
+        "partition",
+        "fdisk"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-mkfs-warning",
+      "name": "Format a filesystem (review first)",
+      "command": "sudo mkfs.ext4 <device>",
+      "description": "Create an ext4 filesystem on a device; this erases existing data on that device.",
+      "category": "Storage",
+      "tags": [
+        "disk",
+        "format",
+        "filesystem"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    }
+  ]
+}

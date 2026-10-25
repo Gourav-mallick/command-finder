@@ -1,0 +1,179 @@
+{
+  "commands": [
+    {
+      "id": "aws-version",
+      "name": "Show AWS CLI version",
+      "command": "aws --version",
+      "description": "Print the installed AWS CLI version.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "version"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-config-list",
+      "name": "Inspect active AWS CLI configuration",
+      "command": "aws configure list",
+      "description": "Show the active profile and where its settings are loaded from.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "config",
+        "profile"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-identity",
+      "name": "Show the current AWS identity",
+      "command": "aws sts get-caller-identity",
+      "description": "Display the account and identity used by the active AWS credentials.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "sts",
+        "identity",
+        "account"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-profile-list",
+      "name": "List AWS CLI profiles",
+      "command": "aws configure list-profiles",
+      "description": "List configured AWS CLI profile names.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "profile",
+        "config"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-s3-list",
+      "name": "List S3 buckets",
+      "command": "aws s3 ls",
+      "description": "List buckets available to the active AWS identity.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "s3",
+        "storage",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-s3-path-list",
+      "name": "List an S3 path",
+      "command": "aws s3 ls s3://<bucket>/<prefix>/",
+      "description": "List objects at an S3 bucket path.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "s3",
+        "storage",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-s3-copy",
+      "name": "Copy a local file to S3",
+      "command": "aws s3 cp <file> s3://<bucket>/<key>",
+      "description": "Upload a file to an S3 bucket.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "s3",
+        "upload",
+        "copy"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "aws-s3-sync-dry",
+      "name": "Preview an S3 sync",
+      "command": "aws s3 sync <directory>/ s3://<bucket>/<prefix>/ --dryrun",
+      "description": "Preview which files a sync would transfer without uploading them.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "s3",
+        "sync",
+        "preview"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-ec2-list",
+      "name": "List EC2 instances",
+      "command": "aws ec2 describe-instances --query \"Reservations[].Instances[].{Id:InstanceId,State:State.Name,Type:InstanceType}\" --output table",
+      "description": "Inspect EC2 instance IDs, states, and types.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "ec2",
+        "instances",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "aws-logs-tail",
+      "name": "Follow CloudWatch log events",
+      "command": "aws logs tail <log-group> --follow",
+      "description": "Stream recent events from a CloudWatch Logs group.",
+      "category": "AWS CLI",
+      "tags": [
+        "aws",
+        "logs",
+        "cloudwatch"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    }
+  ]
+}

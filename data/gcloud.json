@@ -1,0 +1,159 @@
+{
+  "commands": [
+    {
+      "id": "gcloud-version",
+      "name": "Show Google Cloud CLI version",
+      "command": "gcloud version",
+      "description": "Print installed Google Cloud CLI component versions.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "google cloud",
+        "version"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gcloud-auth-list",
+      "name": "List authenticated Google accounts",
+      "command": "gcloud auth list",
+      "description": "Show accounts currently authenticated in the Google Cloud CLI.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "auth",
+        "accounts"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gcloud-project-list",
+      "name": "List Google Cloud projects",
+      "command": "gcloud projects list",
+      "description": "List projects visible to the active account.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "projects",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gcloud-project-set",
+      "name": "Set the active project",
+      "command": "gcloud config set project <project-id>",
+      "description": "Choose the default Google Cloud project for subsequent commands.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "project",
+        "config"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "gcloud-config-list",
+      "name": "Show active Google Cloud settings",
+      "command": "gcloud config list",
+      "description": "Display the active account, project, and CLI configuration.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "config",
+        "settings"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gcloud-compute-list",
+      "name": "List Compute Engine instances",
+      "command": "gcloud compute instances list",
+      "description": "List virtual machine instances in the active project.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "compute",
+        "vm",
+        "instances"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gcloud-storage-list",
+      "name": "List Cloud Storage objects",
+      "command": "gcloud storage ls gs://<bucket>/<prefix>",
+      "description": "List a Cloud Storage bucket or object prefix.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "storage",
+        "bucket",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gcloud-run-list",
+      "name": "List Cloud Run services",
+      "command": "gcloud run services list",
+      "description": "List Cloud Run services in the active project and region.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "run",
+        "services"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gcloud-run-deploy",
+      "name": "Deploy a Cloud Run service",
+      "command": "gcloud run deploy <service> --source .",
+      "description": "Build and deploy the current source directory as a Cloud Run service.",
+      "category": "Google Cloud CLI",
+      "tags": [
+        "gcloud",
+        "run",
+        "deploy"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    }
+  ]
+}

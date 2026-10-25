@@ -1,0 +1,123 @@
+{
+  "commands": [
+    {
+      "id": "mysql-connect",
+      "name": "Connect to MySQL",
+      "command": "mysql -h <host> -u <user> -p <database>",
+      "description": "Connect to MySQL and enter the password at the prompt.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "connect",
+        "database"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mysql-local",
+      "name": "Connect to local MySQL",
+      "command": "mysql -u <user> -p",
+      "description": "Open the MySQL interactive client and prompt for a password.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "local",
+        "shell"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mysql-databases",
+      "name": "List MySQL databases",
+      "command": "mysql -u <user> -p -e \"SHOW DATABASES;\"",
+      "description": "List databases visible to the supplied MySQL account.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "databases",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "mysql-tables",
+      "name": "List tables in a MySQL database",
+      "command": "mysql -u <user> -p -D <database> -e \"SHOW TABLES;\"",
+      "description": "List tables in the selected database.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "tables",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "mysql-dump",
+      "name": "Back up a MySQL database",
+      "command": "mysqldump -u <user> -p <database> > <backup.sql>",
+      "description": "Export a MySQL database to a SQL dump file.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "mysqldump",
+        "backup"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mysql-import",
+      "name": "Import a MySQL SQL file",
+      "command": "mysql -u <user> -p <database> < <backup.sql>",
+      "description": "Execute SQL from a file against the selected database. Review the target first.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "import",
+        "restore"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "mysql-drop-db",
+      "name": "Drop a MySQL database (destructive)",
+      "command": "mysql -u <user> -p -e \"DROP DATABASE <database>;\"",
+      "description": "Permanently remove a MySQL database. Verify the database name and backup first.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "drop",
+        "delete"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    }
+  ]
+}

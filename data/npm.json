@@ -1,0 +1,679 @@
+{
+  "commands": [
+    {
+      "id": "npm-version",
+      "name": "Show npm version",
+      "command": "npm --version",
+      "description": "Print the installed npm version.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "version",
+        "package-manager"
+      ],
+      "examples": [
+        "npm -v"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-init",
+      "name": "Create package.json",
+      "command": "npm init -y",
+      "description": "Create a default package manifest in the current directory.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "init",
+        "project",
+        "setup"
+      ],
+      "examples": [
+        "npm init"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-install",
+      "name": "Install project dependencies",
+      "command": "npm install",
+      "description": "Install dependencies declared by package.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "dependencies",
+        "install"
+      ],
+      "examples": [
+        "npm install --ignore-scripts"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-ci",
+      "name": "Install from package lock",
+      "command": "npm ci",
+      "description": "Cleanly install exact dependency versions from package-lock.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "ci",
+        "lockfile",
+        "install"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-install-package",
+      "name": "Add a dependency",
+      "command": "npm install <package>",
+      "description": "Install a package and add it to project dependencies.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "package",
+        "dependency"
+      ],
+      "examples": [
+        "npm install zod"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-install-dev",
+      "name": "Add a development dependency",
+      "command": "npm install --save-dev <package>",
+      "description": "Install a package used for development and add it to devDependencies.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "dev",
+        "dependency",
+        "install"
+      ],
+      "examples": [
+        "npm install --save-dev vitest"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-install-global",
+      "name": "Install a global npm package",
+      "command": "npm install --global <package>",
+      "description": "Install a command-line package globally for the current Node.js environment.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "global",
+        "install",
+        "cli"
+      ],
+      "examples": [
+        "npm install --global typescript"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-uninstall",
+      "name": "Remove a dependency",
+      "command": "npm uninstall <package>",
+      "description": "Remove a project dependency and update package.json and the lockfile.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "uninstall",
+        "remove",
+        "dependency"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-uninstall-global",
+      "name": "Remove a global npm package",
+      "command": "npm uninstall --global <package>",
+      "description": "Uninstall a package from the current Node.js global environment.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "global",
+        "uninstall",
+        "remove"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-update",
+      "name": "Update project dependencies",
+      "command": "npm update",
+      "description": "Update dependencies within the version ranges declared in package.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "update",
+        "dependencies"
+      ],
+      "examples": [
+        "npm update <package>"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-outdated",
+      "name": "Check outdated packages",
+      "command": "npm outdated",
+      "description": "List dependencies with newer versions available.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "outdated",
+        "update"
+      ],
+      "examples": [
+        "npm outdated --all"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-list",
+      "name": "List installed packages",
+      "command": "npm ls",
+      "description": "Show the installed dependency tree for this project.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "list",
+        "dependencies"
+      ],
+      "examples": [
+        "npm ls --depth=0"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-list-global",
+      "name": "List global packages",
+      "command": "npm ls --global --depth=0",
+      "description": "Show globally installed npm packages.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "global",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-run",
+      "name": "Run a package script",
+      "command": "npm run <script>",
+      "description": "Run a script defined in package.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "script",
+        "run"
+      ],
+      "examples": [
+        "npm run build"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-test",
+      "name": "Run project tests",
+      "command": "npm test",
+      "description": "Run the test script defined in package.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "test",
+        "testing"
+      ],
+      "examples": [
+        "npm test -- --watch"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-start",
+      "name": "Start the project",
+      "command": "npm start",
+      "description": "Run the start script defined in package.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "start",
+        "run"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-dev",
+      "name": "Start development mode",
+      "command": "npm run dev",
+      "description": "Run the project's development script, if defined.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "dev",
+        "development"
+      ],
+      "examples": [
+        "npm run dev -- --host 0.0.0.0"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-script-list",
+      "name": "List package scripts",
+      "command": "npm run",
+      "description": "Display scripts available in package.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "scripts",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-pkg-get",
+      "name": "Read package.json fields",
+      "command": "npm pkg get <field>",
+      "description": "Read one or more values from package.json.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "package-json",
+        "config"
+      ],
+      "examples": [
+        "npm pkg get scripts"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-pkg-set",
+      "name": "Update package.json fields",
+      "command": "npm pkg set <field>=<value>",
+      "description": "Set a value in package.json using npm.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "package-json",
+        "config"
+      ],
+      "examples": [
+        "npm pkg set type=module"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-exec",
+      "name": "Run a package command",
+      "command": "npm exec -- <command>",
+      "description": "Run a locally installed package executable.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "exec",
+        "cli"
+      ],
+      "examples": [
+        "npm exec -- vite --version"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npx",
+      "name": "Run a package binary",
+      "command": "npx <package> [arguments]",
+      "description": "Run a package executable from the npm environment; review packages before running them.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "npx",
+        "package",
+        "run"
+      ],
+      "examples": [
+        "npx vite --version"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npx-create",
+      "name": "Create a project from a starter",
+      "command": "npx <starter-package> <project-name>",
+      "description": "Run a project generator without installing it globally.",
+      "category": "npm / npx",
+      "tags": [
+        "npx",
+        "create",
+        "scaffold",
+        "project"
+      ],
+      "examples": [
+        "npx create-vite my-app"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-view",
+      "name": "Inspect a registry package",
+      "command": "npm view <package>",
+      "description": "Show package metadata from the configured npm registry.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "registry",
+        "package",
+        "info"
+      ],
+      "examples": [
+        "npm view react version"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-search",
+      "name": "Search npm packages",
+      "command": "npm search <term>",
+      "description": "Search the configured npm registry for packages.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "registry",
+        "search"
+      ],
+      "examples": [
+        "npm search markdown parser"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-audit",
+      "name": "Check dependencies for advisories",
+      "command": "npm audit",
+      "description": "Report known security advisories affecting project dependencies.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "security",
+        "audit"
+      ],
+      "examples": [
+        "npm audit --omit=dev"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-audit-fix",
+      "name": "Apply compatible security fixes",
+      "command": "npm audit fix",
+      "description": "Update dependencies where compatible fixes are available; review the resulting changes.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "security",
+        "audit",
+        "fix"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-dedupe",
+      "name": "Deduplicate dependencies",
+      "command": "npm dedupe",
+      "description": "Restructure the dependency tree to reduce duplicate package versions.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "dependencies",
+        "dedupe"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-cache-verify",
+      "name": "Verify npm cache",
+      "command": "npm cache verify",
+      "description": "Check the npm cache and remove corrupted or unnecessary cache data.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "cache",
+        "troubleshooting"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-config-list",
+      "name": "Show npm configuration",
+      "command": "npm config list",
+      "description": "Display active npm configuration values.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "config",
+        "settings"
+      ],
+      "examples": [
+        "npm config get registry"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-pack",
+      "name": "Build a package tarball",
+      "command": "npm pack",
+      "description": "Create a tarball containing the files that would be published.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "pack",
+        "publish",
+        "release"
+      ],
+      "examples": [
+        "npm pack --dry-run"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "npm-publish",
+      "name": "Publish a package",
+      "command": "npm publish",
+      "description": "Publish the current package to the configured npm registry.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "publish",
+        "release"
+      ],
+      "examples": [
+        "npm publish --access public"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "npm-version-patch",
+      "name": "Bump patch version",
+      "command": "npm version patch",
+      "description": "Increment the patch version and create a Git commit and tag by default.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "version",
+        "release"
+      ],
+      "examples": [
+        "npm version minor"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-link",
+      "name": "Link a local package globally",
+      "command": "npm link",
+      "description": "Create a global symlink to the package in the current directory.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "link",
+        "development",
+        "global"
+      ],
+      "examples": [
+        "npm link <package-name>"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-login",
+      "name": "Sign in to npm",
+      "command": "npm login",
+      "description": "Authenticate with the configured npm registry.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "login",
+        "auth",
+        "registry"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "npm-whoami",
+      "name": "Show npm account",
+      "command": "npm whoami",
+      "description": "Show the authenticated user for the configured npm registry.",
+      "category": "npm / npx",
+      "tags": [
+        "npm",
+        "account",
+        "auth"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    }
+  ]
+}

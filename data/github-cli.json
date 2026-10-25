@@ -1,0 +1,175 @@
+{
+  "commands": [
+    {
+      "id": "gh-version",
+      "name": "Show GitHub CLI version",
+      "command": "gh --version",
+      "description": "Print the installed GitHub CLI version.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "github",
+        "version"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-auth-status",
+      "name": "Check GitHub CLI authentication",
+      "command": "gh auth status",
+      "description": "Show which GitHub account and host the CLI is authenticated with.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "auth",
+        "login"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-repo-view",
+      "name": "View repository details",
+      "command": "gh repo view",
+      "description": "Show details for the repository in the current directory.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "repo",
+        "view"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-repo-list",
+      "name": "List repositories",
+      "command": "gh repo list <owner>",
+      "description": "List repositories belonging to an organization or user.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "repo",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-issue-list",
+      "name": "List repository issues",
+      "command": "gh issue list",
+      "description": "List open issues for the current repository.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "issue",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-pr-list",
+      "name": "List pull requests",
+      "command": "gh pr list",
+      "description": "List pull requests for the current repository.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "pr",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-pr-view",
+      "name": "View a pull request",
+      "command": "gh pr view <number>",
+      "description": "Show details for a pull request.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "pr",
+        "view"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-pr-checkout",
+      "name": "Check out a pull request",
+      "command": "gh pr checkout <number>",
+      "description": "Check out a pull request branch locally.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "pr",
+        "checkout"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "gh-run-list",
+      "name": "List workflow runs",
+      "command": "gh run list",
+      "description": "List recent GitHub Actions workflow runs.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "actions",
+        "workflow",
+        "run"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-release-list",
+      "name": "List releases",
+      "command": "gh release list",
+      "description": "List releases for the current repository.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "release",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    }
+  ]
+}

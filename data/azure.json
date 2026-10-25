@@ -1,0 +1,164 @@
+{
+  "commands": [
+    {
+      "id": "az-version",
+      "name": "Show Azure CLI version",
+      "command": "az version",
+      "description": "Print the installed Azure CLI version.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "version"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "az-login",
+      "name": "Sign in to Azure",
+      "command": "az login",
+      "description": "Authenticate the Azure CLI using the interactive sign-in flow.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "login",
+        "auth"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "az-account-show",
+      "name": "Show the active Azure subscription",
+      "command": "az account show --output table",
+      "description": "Display the active subscription and tenant.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "account",
+        "subscription"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "az-account-list",
+      "name": "List Azure subscriptions",
+      "command": "az account list --output table",
+      "description": "List subscriptions available to the signed-in account.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "subscription",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "az-account-set",
+      "name": "Select an Azure subscription",
+      "command": "az account set --subscription <subscription-id>",
+      "description": "Set the subscription used by subsequent Azure CLI commands.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "subscription",
+        "config"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "az-group-list",
+      "name": "List resource groups",
+      "command": "az group list --output table",
+      "description": "List resource groups in the active subscription.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "resource group",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "az-vm-list",
+      "name": "List virtual machines",
+      "command": "az vm list --show-details --output table",
+      "description": "List virtual machines with their current status.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "vm",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "az-storage-list",
+      "name": "List storage accounts",
+      "command": "az storage account list --output table",
+      "description": "List storage accounts in the active subscription.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "storage"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "az-group-delete",
+      "name": "Delete a resource group (destructive)",
+      "command": "az group delete --name <resource-group> --yes",
+      "description": "Delete a resource group and all resources inside it. Review the target carefully before running.",
+      "category": "Azure CLI",
+      "tags": [
+        "azure",
+        "az",
+        "delete",
+        "resource group"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    }
+  ]
+}

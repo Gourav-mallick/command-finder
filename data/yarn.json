@@ -1,0 +1,42 @@
+{
+  "commands": [
+    {
+      "id": "yarn-install",
+      "name": "Install with Yarn",
+      "command": "yarn install",
+      "description": "Install project dependencies using Yarn, if the project uses it.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "install",
+        "dependencies"
+      ],
+      "examples": [
+        "yarn install --immutable"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "yarn-run",
+      "name": "Run a Yarn script",
+      "command": "yarn <script>",
+      "description": "Run a package.json script using Yarn.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "script",
+        "run"
+      ],
+      "examples": [
+        "yarn build"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    }
+  ]
+}

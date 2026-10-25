@@ -1,0 +1,174 @@
+{
+  "commands": [
+    {
+      "id": "redis-ping",
+      "name": "Test Redis connection",
+      "command": "redis-cli ping",
+      "description": "Check whether the local Redis server responds.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "redis-cli",
+        "ping"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "redis-connect",
+      "name": "Connect to a Redis server",
+      "command": "redis-cli -h <host> -p <port>",
+      "description": "Open an interactive Redis CLI connection. Use configured authentication rather than putting secrets in shell history.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "redis-cli",
+        "connect"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "redis-info",
+      "name": "Show Redis server information",
+      "command": "redis-cli INFO",
+      "description": "Display Redis server and statistics information.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "info",
+        "server"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "redis-dbsize",
+      "name": "Count keys in the selected Redis database",
+      "command": "redis-cli DBSIZE",
+      "description": "Return the number of keys in the currently selected database.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "dbsize",
+        "keys"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "redis-scan",
+      "name": "Iterate over Redis keys",
+      "command": "redis-cli SCAN 0",
+      "description": "Fetch a page of keys without blocking the server like KEYS may do.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "scan",
+        "keys"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "redis-get",
+      "name": "Read a Redis string key",
+      "command": "redis-cli GET <key>",
+      "description": "Read the value of a string key.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "get",
+        "key"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "redis-set",
+      "name": "Set a Redis string key",
+      "command": "redis-cli SET <key> <value>",
+      "description": "Write a string value to a Redis key.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "set",
+        "key"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "redis-monitor",
+      "name": "Monitor Redis commands",
+      "command": "redis-cli MONITOR",
+      "description": "Stream commands processed by Redis; use briefly because output can be large and may expose values.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "monitor",
+        "debug"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "redis-flushdb",
+      "name": "Delete all keys in the selected Redis database (destructive)",
+      "command": "redis-cli FLUSHDB",
+      "description": "Permanently remove every key in the currently selected Redis database.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "flushdb",
+        "delete"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "redis-flushall",
+      "name": "Delete all Redis keys in all databases (destructive)",
+      "command": "redis-cli FLUSHALL",
+      "description": "Permanently remove all keys in every Redis database on the connected server.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "flushall",
+        "delete"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    }
+  ]
+}

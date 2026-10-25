@@ -1,0 +1,123 @@
+{
+  "commands": [
+    {
+      "id": "mongosh-connect",
+      "name": "Connect to MongoDB shell",
+      "command": "mongosh \"<connection-string>\"",
+      "description": "Connect interactively to a MongoDB deployment. Keep credentials out of shared command history.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongosh",
+        "connect"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mongosh-local",
+      "name": "Connect to local MongoDB",
+      "command": "mongosh",
+      "description": "Open a shell connected to the local MongoDB server.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongosh",
+        "local"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mongosh-list-databases",
+      "name": "List MongoDB databases",
+      "command": "mongosh --quiet --eval \"show dbs\"",
+      "description": "Print databases visible to the connected MongoDB user.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongosh",
+        "databases"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "mongodump",
+      "name": "Back up MongoDB data",
+      "command": "mongodump --uri \"<connection-string>\" --out <backup-directory>",
+      "description": "Export MongoDB databases to a backup directory. Protect the backup because it may contain sensitive data.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongodump",
+        "backup"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mongorestore",
+      "name": "Restore MongoDB data",
+      "command": "mongorestore --uri \"<connection-string>\" <backup-directory>",
+      "description": "Restore data from a mongodump directory into the selected deployment. Review target first.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongorestore",
+        "restore"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "mongoexport",
+      "name": "Export a MongoDB collection",
+      "command": "mongoexport --uri \"<connection-string>\" --collection <collection> --out <file.json>",
+      "description": "Export collection documents to JSON.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongoexport",
+        "export"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mongoimport",
+      "name": "Import a JSON file into MongoDB",
+      "command": "mongoimport --uri \"<connection-string>\" --collection <collection> --file <file.json>",
+      "description": "Import JSON documents into a MongoDB collection; check whether existing documents may be affected.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongoimport",
+        "import"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    }
+  ]
+}

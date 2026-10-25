@@ -1,0 +1,172 @@
+{
+  "commands": [
+    {
+      "id": "node-version",
+      "name": "Show Node.js version",
+      "command": "node --version",
+      "description": "Print the installed Node.js version.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "version",
+        "runtime"
+      ],
+      "examples": [
+        "node -v"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "node-repl",
+      "name": "Open Node.js REPL",
+      "command": "node",
+      "description": "Start the interactive Node.js prompt; type .exit to quit.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "repl",
+        "interactive"
+      ],
+      "examples": [
+        "node --input-type=module"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "node-run",
+      "name": "Run a JavaScript file",
+      "command": "node <file.js>",
+      "description": "Execute a JavaScript file with Node.js.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "run",
+        "javascript"
+      ],
+      "examples": [
+        "node src/index.js"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "node-check",
+      "name": "Check JavaScript syntax",
+      "command": "node --check <file.js>",
+      "description": "Parse a JavaScript file without executing it.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "syntax",
+        "check"
+      ],
+      "examples": [
+        "node --check src/index.js"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "node-watch",
+      "name": "Restart app when files change",
+      "command": "node --watch <file.js>",
+      "description": "Run a script and restart it when watched files change.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "watch",
+        "development"
+      ],
+      "examples": [
+        "node --watch src/server.js"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "node-test",
+      "name": "Run Node.js tests",
+      "command": "node --test",
+      "description": "Run tests with Node.js's built-in test runner.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "test",
+        "testing"
+      ],
+      "examples": [
+        "node --test test/*.test.js"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "node-inspect",
+      "name": "Start Node.js debugger",
+      "command": "node --inspect <file.js>",
+      "description": "Run a script with the Chrome DevTools inspector enabled.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "debug",
+        "inspect"
+      ],
+      "examples": [
+        "node --inspect-brk src/index.js"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "node-print-versions",
+      "name": "Show Node.js runtime versions",
+      "command": "node -p \"JSON.stringify(process.versions, null, 2)\"",
+      "description": "Print Node.js and bundled library version information.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "versions",
+        "diagnostics"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "corepack-enable",
+      "name": "Enable package manager shims",
+      "command": "corepack enable",
+      "description": "Enable Corepack shims for supported package managers, if Corepack is available.",
+      "category": "Node.js",
+      "tags": [
+        "corepack",
+        "yarn",
+        "pnpm",
+        "setup"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    }
+  ]
+}

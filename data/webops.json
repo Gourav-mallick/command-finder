@@ -1,0 +1,126 @@
+{
+  "commands": [
+    {
+      "id": "nginx-test",
+      "name": "Test Nginx configuration",
+      "command": "sudo nginx -t",
+      "description": "Check Nginx configuration syntax without reloading the service.",
+      "category": "Web operations",
+      "tags": [
+        "nginx",
+        "config",
+        "validate"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "nginx-reload",
+      "name": "Reload Nginx configuration",
+      "command": "sudo systemctl reload nginx",
+      "description": "Ask systemd to reload Nginx configuration without stopping the service.",
+      "category": "Web operations",
+      "tags": [
+        "nginx",
+        "reload",
+        "systemctl"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "nginx-status",
+      "name": "Check Nginx service status",
+      "command": "systemctl status nginx",
+      "description": "Inspect the Nginx service state and recent status messages.",
+      "category": "Web operations",
+      "tags": [
+        "nginx",
+        "status",
+        "systemctl"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "certbot-list",
+      "name": "List Certbot certificates",
+      "command": "sudo certbot certificates",
+      "description": "Show certificates managed by Certbot and their expiry dates.",
+      "category": "Web operations",
+      "tags": [
+        "certbot",
+        "tls",
+        "ssl",
+        "certificates"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "certbot-dry-renew",
+      "name": "Test certificate renewal",
+      "command": "sudo certbot renew --dry-run",
+      "description": "Test the certificate renewal process without changing live certificates.",
+      "category": "Web operations",
+      "tags": [
+        "certbot",
+        "renew",
+        "tls",
+        "test"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "certbot-renew",
+      "name": "Renew certificates",
+      "command": "sudo certbot renew",
+      "description": "Attempt to renew certificates that are due for renewal.",
+      "category": "Web operations",
+      "tags": [
+        "certbot",
+        "renew",
+        "tls"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "certbot-issue",
+      "name": "Request a certificate (review domain and webroot)",
+      "command": "sudo certbot certonly --webroot -w <webroot> -d <domain>",
+      "description": "Request a certificate using the webroot validation method.",
+      "category": "Web operations",
+      "tags": [
+        "certbot",
+        "certificate",
+        "tls",
+        "domain"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    }
+  ]
+}

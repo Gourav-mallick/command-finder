@@ -1,0 +1,222 @@
+{
+  "commands": [
+    {
+      "id": "nvm-install-lts",
+      "name": "Install latest Node.js LTS",
+      "command": "nvm install --lts",
+      "description": "Install the latest Long Term Support Node.js release using nvm.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "install",
+        "lts",
+        "version"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "nvm-install-version",
+      "name": "Install a Node.js version",
+      "command": "nvm install <version>",
+      "description": "Install a specific Node.js version using nvm.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "install",
+        "version"
+      ],
+      "examples": [
+        "nvm install 22"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "nvm-use-lts",
+      "name": "Switch to Node.js LTS",
+      "command": "nvm use --lts",
+      "description": "Switch the current shell to the latest installed LTS version.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "use",
+        "switch",
+        "lts"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "nvm-use-version",
+      "name": "Switch Node.js version",
+      "command": "nvm use <version>",
+      "description": "Use an installed Node.js version in the current shell with nvm or nvm-windows.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "use",
+        "switch",
+        "version"
+      ],
+      "examples": [
+        "nvm use 20"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "nvm-list-posix",
+      "name": "List installed Node.js versions",
+      "command": "nvm ls",
+      "description": "List Node.js versions installed through nvm on Linux or macOS.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "list",
+        "versions"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "nvm-list-windows",
+      "name": "List Node.js versions on Windows",
+      "command": "nvm list",
+      "description": "List versions installed through nvm-windows.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "windows",
+        "list",
+        "versions"
+      ],
+      "examples": [
+        "nvm list available"
+      ],
+      "platforms": [
+        "windows"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "nvm-current",
+      "name": "Show active Node.js version",
+      "command": "nvm current",
+      "description": "Show the Node.js version currently selected by nvm.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "current",
+        "version"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "nvm-default",
+      "name": "Set default Node.js version",
+      "command": "nvm alias default <version>",
+      "description": "Choose the Node.js version nvm selects for new shells.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "default",
+        "version"
+      ],
+      "examples": [
+        "nvm alias default 22"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "nvm-uninstall",
+      "name": "Uninstall a Node.js version",
+      "command": "nvm uninstall <version>",
+      "description": "Remove a version installed through nvm.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "uninstall",
+        "remove"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "nvm-windows-install-lts",
+      "name": "Install Node.js LTS on Windows",
+      "command": "nvm install lts",
+      "description": "Install the latest LTS Node.js release using nvm-windows.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "windows",
+        "install",
+        "lts"
+      ],
+      "examples": [],
+      "platforms": [
+        "windows"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "nvm-windows-on",
+      "name": "Enable nvm-windows",
+      "command": "nvm on",
+      "description": "Enable Node.js version management in nvm-windows.",
+      "category": "Node version management",
+      "tags": [
+        "node",
+        "nvm",
+        "windows",
+        "enable"
+      ],
+      "examples": [],
+      "platforms": [
+        "windows"
+      ],
+      "risk": "medium"
+    }
+  ]
+}

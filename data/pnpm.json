@@ -1,0 +1,42 @@
+{
+  "commands": [
+    {
+      "id": "pnpm-install",
+      "name": "Install with pnpm",
+      "command": "pnpm install",
+      "description": "Install project dependencies using pnpm, if the project uses it.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "install",
+        "dependencies"
+      ],
+      "examples": [
+        "pnpm install --frozen-lockfile"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "pnpm-run",
+      "name": "Run a pnpm script",
+      "command": "pnpm run <script>",
+      "description": "Run a script from package.json using pnpm.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "script",
+        "run"
+      ],
+      "examples": [
+        "pnpm run build"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    }
+  ]
+}

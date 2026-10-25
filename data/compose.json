@@ -1,0 +1,318 @@
+{
+  "commands": [
+    {
+      "id": "docker-compose-up",
+      "name": "Start Compose services",
+      "command": "docker compose up -d",
+      "description": "Create and start all services in docker-compose.yml in the background.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "up",
+        "services"
+      ],
+      "examples": [
+        "docker compose up -d",
+        "docker compose up -d --build"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-compose-down",
+      "name": "Stop and remove Compose services",
+      "command": "docker compose down",
+      "description": "Stop and remove containers and networks. Add -v to remove volumes too.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "down",
+        "cleanup"
+      ],
+      "examples": [
+        "docker compose down",
+        "docker compose down -v"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-compose-ps",
+      "name": "List Compose services",
+      "command": "docker compose ps",
+      "description": "List containers of the Compose project.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "list",
+        "services"
+      ],
+      "examples": [
+        "docker compose ps -a"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-logs",
+      "name": "Follow Compose logs",
+      "command": "docker compose logs -f",
+      "description": "Stream logs from all or selected services.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "logs"
+      ],
+      "examples": [
+        "docker compose logs -f web",
+        "docker compose logs --tail 50"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-build",
+      "name": "Build Compose services",
+      "command": "docker compose build",
+      "description": "Build or rebuild service images.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "build"
+      ],
+      "examples": [
+        "docker compose build web",
+        "docker compose build --no-cache"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-exec",
+      "name": "Shell into Compose service",
+      "command": "docker compose exec SERVICE sh",
+      "description": "Run a command in a running service container.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "exec",
+        "shell"
+      ],
+      "examples": [
+        "docker compose exec web bash"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-compose-run",
+      "name": "Run one-off Compose command",
+      "command": "docker compose run --rm SERVICE COMMAND",
+      "description": "Run a one-time command in a new container of a service.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "run",
+        "one-off"
+      ],
+      "examples": [
+        "docker compose run --rm web npm test"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-compose-restart",
+      "name": "Restart Compose services",
+      "command": "docker compose restart",
+      "description": "Restart all or selected services.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "restart"
+      ],
+      "examples": [
+        "docker compose restart web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-compose-stop",
+      "name": "Stop Compose services",
+      "command": "docker compose stop",
+      "description": "Stop services without removing containers.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "stop"
+      ],
+      "examples": [
+        "docker compose stop",
+        "docker compose stop web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-compose-pull",
+      "name": "Pull Compose images",
+      "command": "docker compose pull",
+      "description": "Pull latest images for all services.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "pull",
+        "images"
+      ],
+      "examples": [
+        "docker compose pull"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-config",
+      "name": "Validate Compose file",
+      "command": "docker compose config",
+      "description": "Validate and print the final merged Compose config.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "config",
+        "validate"
+      ],
+      "examples": [
+        "docker compose config",
+        "docker compose -f docker-compose.prod.yml config"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-start",
+      "name": "Start stopped Compose services",
+      "command": "docker compose start",
+      "description": "Start existing stopped service containers.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "start",
+        "services"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-port",
+      "name": "Show a service port mapping",
+      "command": "docker compose port SERVICE PORT",
+      "description": "Show the public port bound to a service port.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "port",
+        "network"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-top",
+      "name": "List processes in Compose services",
+      "command": "docker compose top",
+      "description": "Show running processes for Compose services.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "process",
+        "inspect"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-images",
+      "name": "List Compose images",
+      "command": "docker compose images",
+      "description": "List images used by the Compose project.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "images",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-compose-rm",
+      "name": "Remove stopped Compose containers",
+      "command": "docker compose rm",
+      "description": "Remove stopped service containers after confirmation.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "remove",
+        "containers"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-compose-down-volumes",
+      "name": "Remove Compose project and volumes",
+      "command": "docker compose down --volumes",
+      "description": "Stop and remove the project, including named volumes and their data.",
+      "category": "Docker Compose",
+      "tags": [
+        "compose",
+        "down",
+        "volumes",
+        "delete"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    }
+  ]
+}

@@ -1,0 +1,1293 @@
+{
+  "commands": [
+    {
+      "id": "docker-version",
+      "name": "Check Docker version",
+      "command": "docker version",
+      "description": "Show Docker client and server version.",
+      "category": "Docker",
+      "tags": [
+        "setup",
+        "version"
+      ],
+      "examples": [
+        "docker version",
+        "docker --version"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-info",
+      "name": "Show Docker system info",
+      "command": "docker info",
+      "description": "Show system-wide info such as containers, images, storage driver and resources.",
+      "category": "Docker",
+      "tags": [
+        "setup",
+        "info",
+        "system"
+      ],
+      "examples": [
+        "docker info"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-login",
+      "name": "Log in to registry",
+      "command": "docker login",
+      "description": "Authenticate with Docker Hub or another registry.",
+      "category": "Docker",
+      "tags": [
+        "registry",
+        "auth"
+      ],
+      "examples": [
+        "docker login",
+        "docker login ghcr.io -u USERNAME"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-logout",
+      "name": "Log out from registry",
+      "command": "docker logout",
+      "description": "Remove stored registry credentials.",
+      "category": "Docker",
+      "tags": [
+        "registry",
+        "auth"
+      ],
+      "examples": [
+        "docker logout",
+        "docker logout ghcr.io"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-pull",
+      "name": "Pull image",
+      "command": "docker pull IMAGE",
+      "description": "Download an image from a registry.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "registry",
+        "download"
+      ],
+      "examples": [
+        "docker pull nginx:latest",
+        "docker pull postgres:16"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-push",
+      "name": "Push image",
+      "command": "docker push IMAGE",
+      "description": "Upload an image to a registry.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "registry",
+        "upload"
+      ],
+      "examples": [
+        "docker push username/myapp:1.0"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-search",
+      "name": "Search images",
+      "command": "docker search TERM",
+      "description": "Search Docker Hub for images.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "registry",
+        "search"
+      ],
+      "examples": [
+        "docker search redis"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-build",
+      "name": "Build image",
+      "command": "docker build -t IMAGE .",
+      "description": "Build an image from a Dockerfile in the current folder.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "build",
+        "dockerfile"
+      ],
+      "examples": [
+        "docker build -t myapp:1.0 .",
+        "docker build -f Dockerfile.dev -t myapp:dev ."
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-build-nocache",
+      "name": "Build image without cache",
+      "command": "docker build --no-cache -t IMAGE .",
+      "description": "Rebuild every layer from scratch.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "build",
+        "cache"
+      ],
+      "examples": [
+        "docker build --no-cache -t myapp:1.0 ."
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-buildx",
+      "name": "Multi-platform build",
+      "command": "docker buildx build --platform linux/amd64,linux/arm64 -t IMAGE --push .",
+      "description": "Build and push an image for multiple CPU architectures.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "build",
+        "buildx",
+        "multi-arch"
+      ],
+      "examples": [
+        "docker buildx build --platform linux/amd64,linux/arm64 -t username/myapp:1.0 --push ."
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-images",
+      "name": "List images",
+      "command": "docker images",
+      "description": "List local images.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "list"
+      ],
+      "examples": [
+        "docker images -a",
+        "docker image ls"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-tag",
+      "name": "Tag image",
+      "command": "docker tag SOURCE TARGET",
+      "description": "Create a new tag for an existing image.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "tag"
+      ],
+      "examples": [
+        "docker tag myapp:1.0 username/myapp:latest"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-history",
+      "name": "Show image layers",
+      "command": "docker history IMAGE",
+      "description": "Show the layer history and sizes of an image.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "layers",
+        "debug"
+      ],
+      "examples": [
+        "docker history nginx:latest"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-save",
+      "name": "Save image to tar",
+      "command": "docker save -o FILE.tar IMAGE",
+      "description": "Export an image to a tar archive.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "backup",
+        "export"
+      ],
+      "examples": [
+        "docker save -o myapp.tar myapp:1.0"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-load",
+      "name": "Load image from tar",
+      "command": "docker load -i FILE.tar",
+      "description": "Import an image from a tar archive.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "restore",
+        "import"
+      ],
+      "examples": [
+        "docker load -i myapp.tar"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-rmi",
+      "name": "Remove image",
+      "command": "docker rmi IMAGE",
+      "description": "Delete a local image.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "remove",
+        "cleanup"
+      ],
+      "examples": [
+        "docker rmi nginx:latest",
+        "docker rmi -f IMAGE_ID"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-image-prune",
+      "name": "Remove dangling images",
+      "command": "docker image prune",
+      "description": "Delete unused dangling images. Use -a to remove all unused images.",
+      "category": "Docker",
+      "tags": [
+        "images",
+        "cleanup",
+        "prune"
+      ],
+      "examples": [
+        "docker image prune",
+        "docker image prune -a"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-run",
+      "name": "Run container",
+      "command": "docker run IMAGE",
+      "description": "Create and start a container from an image.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "run"
+      ],
+      "examples": [
+        "docker run hello-world",
+        "docker run -it ubuntu bash"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-run-detached",
+      "name": "Run container in background",
+      "command": "docker run -d --name NAME -p HOST:CONTAINER IMAGE",
+      "description": "Run a container detached with a name and port mapping.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "run",
+        "ports",
+        "detached"
+      ],
+      "examples": [
+        "docker run -d --name web -p 8080:80 nginx"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-run-rm",
+      "name": "Run temporary container",
+      "command": "docker run --rm -it IMAGE sh",
+      "description": "Run an interactive container that is deleted when it exits.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "run",
+        "temporary"
+      ],
+      "examples": [
+        "docker run --rm -it alpine sh"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-run-env",
+      "name": "Run container with env vars",
+      "command": "docker run -d -e KEY=VALUE IMAGE",
+      "description": "Pass environment variables to a container. Use --env-file for many.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "run",
+        "env",
+        "config"
+      ],
+      "examples": [
+        "docker run -d -e POSTGRES_PASSWORD=secret postgres:16",
+        "docker run -d --env-file .env myapp"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-run-volume",
+      "name": "Run container with volume",
+      "command": "docker run -d -v HOST_PATH:CONTAINER_PATH IMAGE",
+      "description": "Mount a folder or named volume into a container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "run",
+        "volumes",
+        "storage"
+      ],
+      "examples": [
+        "docker run -d -v mydata:/var/lib/postgresql/data postgres:16",
+        "docker run -v $(pwd):/app node:20 npm test"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-run-restart",
+      "name": "Run with restart policy",
+      "command": "docker run -d --restart unless-stopped IMAGE",
+      "description": "Auto-restart the container after crashes or reboot.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "run",
+        "restart",
+        "policy"
+      ],
+      "examples": [
+        "docker run -d --restart unless-stopped --name web nginx"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-create",
+      "name": "Create container",
+      "command": "docker create --name NAME IMAGE",
+      "description": "Create a container without starting it.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "create"
+      ],
+      "examples": [
+        "docker create --name web nginx"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-ps",
+      "name": "List running containers",
+      "command": "docker ps",
+      "description": "List currently running Docker containers.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "list"
+      ],
+      "examples": [
+        "docker ps -a"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-ps-filter",
+      "name": "Filter containers",
+      "command": "docker ps -a --filter \"status=exited\"",
+      "description": "List containers filtered by status, name or label.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "list",
+        "filter"
+      ],
+      "examples": [
+        "docker ps -a --filter \"status=exited\"",
+        "docker ps --filter \"name=web\""
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-start",
+      "name": "Start container",
+      "command": "docker start CONTAINER",
+      "description": "Start a stopped container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "start"
+      ],
+      "examples": [
+        "docker start web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-stop",
+      "name": "Stop container",
+      "command": "docker stop CONTAINER",
+      "description": "Gracefully stop a running container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "stop"
+      ],
+      "examples": [
+        "docker stop web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-restart",
+      "name": "Restart container",
+      "command": "docker restart CONTAINER",
+      "description": "Stop and start a container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "restart"
+      ],
+      "examples": [
+        "docker restart web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-kill",
+      "name": "Kill container",
+      "command": "docker kill CONTAINER",
+      "description": "Force stop a container immediately.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "kill",
+        "stop"
+      ],
+      "examples": [
+        "docker kill web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-pause",
+      "name": "Pause container",
+      "command": "docker pause CONTAINER",
+      "description": "Freeze all processes in a container. Use unpause to resume.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "pause"
+      ],
+      "examples": [
+        "docker pause web",
+        "docker unpause web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-rm",
+      "name": "Remove container",
+      "command": "docker rm CONTAINER",
+      "description": "Delete a stopped container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "remove",
+        "cleanup"
+      ],
+      "examples": [
+        "docker rm web",
+        "docker rm -f web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-rm-all",
+      "name": "Remove all stopped containers",
+      "command": "docker container prune",
+      "description": "Delete all stopped containers.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "cleanup",
+        "prune"
+      ],
+      "examples": [
+        "docker container prune",
+        "docker container prune -f"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-logs",
+      "name": "Follow container logs",
+      "command": "docker logs -f CONTAINER",
+      "description": "Stream logs from a container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "logs"
+      ],
+      "examples": [
+        "docker logs --tail 100 -f web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-logs-since",
+      "name": "Logs with time filter",
+      "command": "docker logs --since 10m CONTAINER",
+      "description": "Show logs from a recent time window with timestamps.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "logs",
+        "filter"
+      ],
+      "examples": [
+        "docker logs --since 10m -t web",
+        "docker logs --until 2026-01-01T00:00:00 web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-exec",
+      "name": "Open shell in container",
+      "command": "docker exec -it CONTAINER sh",
+      "description": "Start an interactive shell inside a running container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "shell"
+      ],
+      "examples": [
+        "docker exec -it web bash"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-exec-cmd",
+      "name": "Run command in container",
+      "command": "docker exec CONTAINER COMMAND",
+      "description": "Run a single command inside a running container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "exec",
+        "command"
+      ],
+      "examples": [
+        "docker exec web ls /app",
+        "docker exec db psql -U postgres -c \"SELECT 1\""
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-attach",
+      "name": "Attach to container",
+      "command": "docker attach CONTAINER",
+      "description": "Attach to the main process of a running container. Detach with Ctrl+P, Ctrl+Q.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "attach"
+      ],
+      "examples": [
+        "docker attach web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-cp",
+      "name": "Copy files to or from container",
+      "command": "docker cp SRC DEST",
+      "description": "Copy files between host and container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "files",
+        "copy"
+      ],
+      "examples": [
+        "docker cp ./config.json web:/app/config.json",
+        "docker cp web:/var/log/app.log ./app.log"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-inspect",
+      "name": "Inspect object",
+      "command": "docker inspect NAME",
+      "description": "Show detailed low-level JSON info for a container, image, volume or network.",
+      "category": "Docker",
+      "tags": [
+        "inspect",
+        "debug",
+        "info"
+      ],
+      "examples": [
+        "docker inspect web",
+        "docker inspect -f '{{.NetworkSettings.IPAddress}}' web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-top",
+      "name": "Show container processes",
+      "command": "docker top CONTAINER",
+      "description": "List running processes inside a container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "process",
+        "debug"
+      ],
+      "examples": [
+        "docker top web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-stats",
+      "name": "Live resource usage",
+      "command": "docker stats",
+      "description": "Stream CPU, memory, network and disk usage of running containers.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "performance",
+        "monitoring"
+      ],
+      "examples": [
+        "docker stats",
+        "docker stats --no-stream"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-port",
+      "name": "Show port mappings",
+      "command": "docker port CONTAINER",
+      "description": "List port mappings of a container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "ports",
+        "network"
+      ],
+      "examples": [
+        "docker port web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-diff",
+      "name": "Show filesystem changes",
+      "command": "docker diff CONTAINER",
+      "description": "Show files added, changed or deleted in a container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "filesystem",
+        "debug"
+      ],
+      "examples": [
+        "docker diff web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-rename",
+      "name": "Rename container",
+      "command": "docker rename OLD NEW",
+      "description": "Change the name of a container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "rename"
+      ],
+      "examples": [
+        "docker rename web web-old"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-update",
+      "name": "Update container limits",
+      "command": "docker update --memory 512m CONTAINER",
+      "description": "Change resource limits or restart policy of a running container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "resources",
+        "limits"
+      ],
+      "examples": [
+        "docker update --cpus 1 --memory 512m web",
+        "docker update --restart unless-stopped web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-commit",
+      "name": "Create image from container",
+      "command": "docker commit CONTAINER IMAGE",
+      "description": "Save the current state of a container as a new image.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "images",
+        "commit"
+      ],
+      "examples": [
+        "docker commit web myapp:snapshot"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-export",
+      "name": "Export container filesystem",
+      "command": "docker export -o FILE.tar CONTAINER",
+      "description": "Export a container filesystem as a tar archive.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "backup",
+        "export"
+      ],
+      "examples": [
+        "docker export -o web.tar web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-wait",
+      "name": "Wait for container to stop",
+      "command": "docker wait CONTAINER",
+      "description": "Block until a container stops and print its exit code.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "scripting",
+        "exit-code"
+      ],
+      "examples": [
+        "docker wait web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-events",
+      "name": "Stream Docker events",
+      "command": "docker events",
+      "description": "Stream real-time events from the Docker daemon.",
+      "category": "Docker",
+      "tags": [
+        "monitoring",
+        "events",
+        "debug"
+      ],
+      "examples": [
+        "docker events --filter type=container"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-volume-create",
+      "name": "Create volume",
+      "command": "docker volume create NAME",
+      "description": "Create a named volume for persistent data.",
+      "category": "Docker",
+      "tags": [
+        "volumes",
+        "storage",
+        "create"
+      ],
+      "examples": [
+        "docker volume create mydata"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-volume-ls",
+      "name": "List volumes",
+      "command": "docker volume ls",
+      "description": "List all volumes.",
+      "category": "Docker",
+      "tags": [
+        "volumes",
+        "storage",
+        "list"
+      ],
+      "examples": [
+        "docker volume ls"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-volume-inspect",
+      "name": "Inspect volume",
+      "command": "docker volume inspect NAME",
+      "description": "Show details and mount point of a volume.",
+      "category": "Docker",
+      "tags": [
+        "volumes",
+        "storage",
+        "inspect"
+      ],
+      "examples": [
+        "docker volume inspect mydata"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-volume-rm",
+      "name": "Remove volume",
+      "command": "docker volume rm NAME",
+      "description": "Delete a volume and its data.",
+      "category": "Docker",
+      "tags": [
+        "volumes",
+        "storage",
+        "remove"
+      ],
+      "examples": [
+        "docker volume rm mydata"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-volume-prune",
+      "name": "Remove unused volumes",
+      "command": "docker volume prune",
+      "description": "Delete all volumes not used by any container. Data is lost.",
+      "category": "Docker",
+      "tags": [
+        "volumes",
+        "storage",
+        "cleanup",
+        "prune"
+      ],
+      "examples": [
+        "docker volume prune",
+        "docker volume prune -f"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-network-create",
+      "name": "Create network",
+      "command": "docker network create NAME",
+      "description": "Create a user-defined network so containers can reach each other by name.",
+      "category": "Docker",
+      "tags": [
+        "network",
+        "create"
+      ],
+      "examples": [
+        "docker network create mynet"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-network-ls",
+      "name": "List networks",
+      "command": "docker network ls",
+      "description": "List all Docker networks.",
+      "category": "Docker",
+      "tags": [
+        "network",
+        "list"
+      ],
+      "examples": [
+        "docker network ls"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-network-inspect",
+      "name": "Inspect network",
+      "command": "docker network inspect NAME",
+      "description": "Show connected containers and config of a network.",
+      "category": "Docker",
+      "tags": [
+        "network",
+        "inspect",
+        "debug"
+      ],
+      "examples": [
+        "docker network inspect bridge"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-network-connect",
+      "name": "Connect container to network",
+      "command": "docker network connect NETWORK CONTAINER",
+      "description": "Attach a running container to a network.",
+      "category": "Docker",
+      "tags": [
+        "network",
+        "connect"
+      ],
+      "examples": [
+        "docker network connect mynet web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-network-disconnect",
+      "name": "Disconnect container from network",
+      "command": "docker network disconnect NETWORK CONTAINER",
+      "description": "Detach a container from a network.",
+      "category": "Docker",
+      "tags": [
+        "network",
+        "disconnect"
+      ],
+      "examples": [
+        "docker network disconnect mynet web"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-network-rm",
+      "name": "Remove network",
+      "command": "docker network rm NAME",
+      "description": "Delete a network. Also: docker network prune for unused ones.",
+      "category": "Docker",
+      "tags": [
+        "network",
+        "remove",
+        "cleanup"
+      ],
+      "examples": [
+        "docker network rm mynet",
+        "docker network prune"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-system-df",
+      "name": "Show disk usage",
+      "command": "docker system df",
+      "description": "Show disk used by images, containers, volumes and build cache.",
+      "category": "Docker",
+      "tags": [
+        "system",
+        "disk",
+        "cleanup"
+      ],
+      "examples": [
+        "docker system df",
+        "docker system df -v"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-system-prune",
+      "name": "Clean up unused data",
+      "command": "docker system prune",
+      "description": "Remove stopped containers, unused networks, dangling images and build cache.",
+      "category": "Docker",
+      "tags": [
+        "system",
+        "cleanup",
+        "prune"
+      ],
+      "examples": [
+        "docker system prune",
+        "docker system prune -a --volumes"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-builder-prune",
+      "name": "Clear build cache",
+      "command": "docker builder prune",
+      "description": "Remove unused build cache.",
+      "category": "Docker",
+      "tags": [
+        "build",
+        "cache",
+        "cleanup"
+      ],
+      "examples": [
+        "docker builder prune",
+        "docker builder prune -a"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "docker-context-ls",
+      "name": "List contexts",
+      "command": "docker context ls",
+      "description": "List Docker contexts (local, remote hosts).",
+      "category": "Docker",
+      "tags": [
+        "context",
+        "remote"
+      ],
+      "examples": [
+        "docker context ls",
+        "docker context use remote-server"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "docker-stop-all",
+      "name": "Stop all running containers",
+      "command": "docker stop $(docker ps -q)",
+      "description": "Stop every running container.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "stop",
+        "bulk"
+      ],
+      "examples": [
+        "docker stop $(docker ps -q)"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "docker-rm-all-force",
+      "name": "Remove all containers",
+      "command": "docker rm -f $(docker ps -aq)",
+      "description": "Force remove every container, running or stopped.",
+      "category": "Docker",
+      "tags": [
+        "containers",
+        "remove",
+        "bulk",
+        "cleanup"
+      ],
+      "examples": [
+        "docker rm -f $(docker ps -aq)"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "high"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "commands": [
+    {
+      "id": "sqlite-open",
+      "name": "Open a SQLite database",
+      "command": "sqlite3 <database.db>",
+      "description": "Open or create a SQLite database in the interactive sqlite3 shell.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "database",
+        "shell"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "sqlite-tables",
+      "name": "List SQLite tables",
+      "command": "sqlite3 <database.db> \".tables\"",
+      "description": "List tables in a SQLite database, including a Room database file.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "room",
+        "tables"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sqlite-schema",
+      "name": "Show SQLite schema",
+      "command": "sqlite3 <database.db> \".schema\"",
+      "description": "Print table and index creation statements from a SQLite database.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "room",
+        "schema"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sqlite-query",
+      "name": "Run a read-only SQLite query",
+      "command": "sqlite3 -readonly <database.db> \"SELECT name FROM sqlite_master WHERE type='table';\"",
+      "description": "Run a query in read-only mode to inspect a SQLite database.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "query",
+        "room"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sqlite-backup",
+      "name": "Back up a SQLite database",
+      "command": "sqlite3 <database.db> \".backup <backup.db>\"",
+      "description": "Create a consistent SQLite database backup using the sqlite shell.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "backup",
+        "database"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "sqlite-integrity",
+      "name": "Check SQLite database integrity",
+      "command": "sqlite3 <database.db> \"PRAGMA integrity_check;\"",
+      "description": "Run SQLite’s integrity check against a database file.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "integrity",
+        "check"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "low"
+    }
+  ]
+}

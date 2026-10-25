@@ -1,0 +1,144 @@
+{
+  "commands": [
+    {
+      "id": "psql-connect",
+      "name": "Connect to PostgreSQL",
+      "command": "psql -h <host> -U <user> -d <database>",
+      "description": "Connect to a PostgreSQL database; psql prompts for a password if needed.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "postgresql",
+        "psql",
+        "connect"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "psql-local",
+      "name": "Connect to a local PostgreSQL database",
+      "command": "psql -d <database>",
+      "description": "Open an interactive psql session to a local database.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "psql",
+        "local"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "psql-list-databases",
+      "name": "List PostgreSQL databases",
+      "command": "psql -l",
+      "description": "List databases accessible to the current PostgreSQL user.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "psql",
+        "databases",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "psql-list-tables",
+      "name": "List PostgreSQL tables",
+      "command": "psql -d <database> -c \"\\dt\"",
+      "description": "List tables in the selected database.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "psql",
+        "tables"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "psql-run-file",
+      "name": "Run a SQL file with psql",
+      "command": "psql -d <database> -f <file.sql>",
+      "description": "Execute SQL statements from a file against the selected database.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "psql",
+        "sql",
+        "file"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "pg-dump",
+      "name": "Back up a PostgreSQL database",
+      "command": "pg_dump -Fc -d <database> -f <backup.dump>",
+      "description": "Create a custom-format PostgreSQL database backup.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "pg_dump",
+        "backup"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "pg-restore",
+      "name": "Restore a PostgreSQL backup",
+      "command": "pg_restore -d <database> <backup.dump>",
+      "description": "Restore a custom-format backup into the selected database. Review target contents first.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "pg_restore",
+        "restore"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "psql-drop-db",
+      "name": "Drop a PostgreSQL database (destructive)",
+      "command": "dropdb <database>",
+      "description": "Permanently remove a PostgreSQL database. Verify the database name and backup first.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "dropdb",
+        "delete"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    }
+  ]
+}

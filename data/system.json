@@ -1,0 +1,401 @@
+{
+  "commands": [
+    {
+      "id": "linux-tar-create",
+      "name": "Create a tar archive",
+      "command": "tar -czf archive.tar.gz <directory>",
+      "description": "Create a gzip-compressed tar archive of a directory.",
+      "category": "System administration",
+      "tags": [
+        "archive",
+        "compress",
+        "tar"
+      ],
+      "examples": [
+        "tar -czf source.tar.gz src/"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-tar-extract",
+      "name": "Extract a tar archive",
+      "command": "tar -xzf <archive.tar.gz>",
+      "description": "Extract a gzip-compressed tar archive into the current directory.",
+      "category": "System administration",
+      "tags": [
+        "archive",
+        "extract",
+        "tar"
+      ],
+      "examples": [
+        "tar -xzf backup.tar.gz -C /tmp/restore"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-zip",
+      "name": "Create a zip archive",
+      "command": "zip -r archive.zip <directory>",
+      "description": "Recursively compress a directory into a ZIP archive.",
+      "category": "System administration",
+      "tags": [
+        "archive",
+        "compress",
+        "zip"
+      ],
+      "examples": [
+        "zip -r source.zip src/"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-unzip",
+      "name": "Extract a zip archive",
+      "command": "unzip <archive.zip>",
+      "description": "Extract a ZIP archive into the current directory.",
+      "category": "System administration",
+      "tags": [
+        "archive",
+        "extract",
+        "zip"
+      ],
+      "examples": [
+        "unzip source.zip -d /tmp/source"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-systemctl-status",
+      "name": "Check service status",
+      "command": "systemctl status <service>",
+      "description": "Inspect a systemd service and its recent status.",
+      "category": "System administration",
+      "tags": [
+        "service",
+        "systemd",
+        "status"
+      ],
+      "examples": [
+        "systemctl status nginx"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-systemctl-start",
+      "name": "Start a service",
+      "command": "sudo systemctl start <service>",
+      "description": "Start a systemd service now.",
+      "category": "System administration",
+      "tags": [
+        "service",
+        "systemd",
+        "start"
+      ],
+      "examples": [
+        "sudo systemctl start nginx"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-systemctl-stop",
+      "name": "Stop a service",
+      "command": "sudo systemctl stop <service>",
+      "description": "Stop a systemd service now.",
+      "category": "System administration",
+      "tags": [
+        "service",
+        "systemd",
+        "stop"
+      ],
+      "examples": [
+        "sudo systemctl stop nginx"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "linux-systemctl-restart",
+      "name": "Restart a service",
+      "command": "sudo systemctl restart <service>",
+      "description": "Restart a systemd service.",
+      "category": "System administration",
+      "tags": [
+        "service",
+        "systemd",
+        "restart"
+      ],
+      "examples": [
+        "sudo systemctl restart nginx"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-systemctl-enable",
+      "name": "Enable service at boot",
+      "command": "sudo systemctl enable --now <service>",
+      "description": "Enable a systemd service at startup and start it now.",
+      "category": "System administration",
+      "tags": [
+        "service",
+        "systemd",
+        "boot"
+      ],
+      "examples": [
+        "sudo systemctl enable --now docker"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "linux-journal",
+      "name": "Follow service logs",
+      "command": "journalctl -u <service> -f",
+      "description": "Follow recent journal entries for a systemd service.",
+      "category": "System administration",
+      "tags": [
+        "logs",
+        "systemd",
+        "service"
+      ],
+      "examples": [
+        "journalctl -u nginx --since today"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "linux-journal-errors",
+      "name": "Show recent system errors",
+      "command": "journalctl -p err -b",
+      "description": "Show error-level journal messages from the current boot.",
+      "category": "System administration",
+      "tags": [
+        "logs",
+        "errors",
+        "journal"
+      ],
+      "examples": [
+        "journalctl -p warning -b"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-crontab-list",
+      "name": "List scheduled cron jobs",
+      "command": "crontab -l",
+      "description": "Show the current user’s scheduled cron jobs.",
+      "category": "System administration",
+      "tags": [
+        "cron",
+        "schedule",
+        "jobs"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-crontab-edit",
+      "name": "Edit scheduled cron jobs",
+      "command": "crontab -e",
+      "description": "Open the current user’s crontab in the configured editor.",
+      "category": "System administration",
+      "tags": [
+        "cron",
+        "schedule",
+        "edit"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "sys-tmux-new",
+      "name": "Start a named tmux session",
+      "command": "tmux new -s <session>",
+      "description": "Create and attach to a persistent terminal session.",
+      "category": "System administration",
+      "tags": [
+        "tmux",
+        "terminal",
+        "session"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-tmux-list",
+      "name": "List tmux sessions",
+      "command": "tmux ls",
+      "description": "List active tmux sessions.",
+      "category": "System administration",
+      "tags": [
+        "tmux",
+        "terminal",
+        "session",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-tmux-attach",
+      "name": "Reconnect to a tmux session",
+      "command": "tmux attach -t <session>",
+      "description": "Attach to an existing tmux session.",
+      "category": "System administration",
+      "tags": [
+        "tmux",
+        "terminal",
+        "session",
+        "attach"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-tmux-detach",
+      "name": "Detach from tmux",
+      "command": "tmux detach",
+      "description": "Detach from the current tmux session while leaving it running.",
+      "category": "System administration",
+      "tags": [
+        "tmux",
+        "terminal",
+        "session"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-screen-new",
+      "name": "Start a named screen session",
+      "command": "screen -S <session>",
+      "description": "Create and attach to a persistent GNU Screen session.",
+      "category": "System administration",
+      "tags": [
+        "screen",
+        "terminal",
+        "session"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-screen-list",
+      "name": "List screen sessions",
+      "command": "screen -ls",
+      "description": "List active GNU Screen sessions.",
+      "category": "System administration",
+      "tags": [
+        "screen",
+        "terminal",
+        "session",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-screen-attach",
+      "name": "Reconnect to a screen session",
+      "command": "screen -r <session>",
+      "description": "Resume a detached GNU Screen session.",
+      "category": "System administration",
+      "tags": [
+        "screen",
+        "terminal",
+        "session",
+        "attach"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "sys-screen-detach",
+      "name": "Detach from screen",
+      "command": "screen -d -r <session>",
+      "description": "Detach a GNU Screen session from another terminal and reconnect here.",
+      "category": "System administration",
+      "tags": [
+        "screen",
+        "terminal",
+        "session"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "risk": "medium"
+    }
+  ]
+}

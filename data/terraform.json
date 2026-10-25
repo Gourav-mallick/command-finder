@@ -1,0 +1,156 @@
+{
+  "commands": [
+    {
+      "id": "terraform-version",
+      "name": "Show Terraform version",
+      "command": "terraform version",
+      "description": "Print the installed Terraform CLI version.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "version"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "terraform-init",
+      "name": "Initialize Terraform configuration",
+      "command": "terraform init",
+      "description": "Initialize providers and modules for the current Terraform configuration.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "init",
+        "provider"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "terraform-fmt",
+      "name": "Format Terraform files",
+      "command": "terraform fmt -recursive",
+      "description": "Format Terraform configuration files in this directory tree.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "fmt",
+        "format"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "terraform-validate",
+      "name": "Validate Terraform configuration",
+      "command": "terraform validate",
+      "description": "Check configuration syntax and internal consistency.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "validate",
+        "check"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "terraform-plan",
+      "name": "Preview infrastructure changes",
+      "command": "terraform plan",
+      "description": "Show the proposed infrastructure changes without applying them.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "plan",
+        "preview"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "terraform-apply",
+      "name": "Apply infrastructure changes (review first)",
+      "command": "terraform apply",
+      "description": "Create or update infrastructure after reviewing the proposed plan.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "apply",
+        "deploy"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "terraform-destroy",
+      "name": "Destroy managed infrastructure (destructive)",
+      "command": "terraform destroy",
+      "description": "Plan and destroy infrastructure managed by this Terraform configuration.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "destroy",
+        "delete"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "terraform-workspace-list",
+      "name": "List Terraform workspaces",
+      "command": "terraform workspace list",
+      "description": "List workspaces for the current Terraform configuration.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "workspace",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "terraform-show",
+      "name": "Show Terraform state or plan",
+      "command": "terraform show",
+      "description": "Display the current state or a saved plan in human-readable form.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "show",
+        "state"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    }
+  ]
+}
