@@ -38,6 +38,7 @@ After installation:
 
 If you prefer installing via `apt` or `dpkg`:
 
+```sh
 
 # Install package system-wide:
 sudo dpkg -i dist/cmdx_0.1.0_all.deb
