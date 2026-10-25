@@ -34,7 +34,23 @@ cp "$DIR/LICENSE" "$STAGE_DIR/usr/share/doc/cmdx/" 2>/dev/null || true
 # Binary launcher in /usr/bin/cmdx
 cat << 'EOF' > "$STAGE_DIR/usr/bin/cmdx"
 #!/usr/bin/env bash
-exec /usr/bin/env node /usr/share/cmdx/dist/src/cli.js "$@"
+# If node is not on current PATH, try user NVM/asdf paths
+if ! command -v node >/dev/null 2>&1; then
+  for p in "$HOME/.nvm/versions/node"/v*/bin "$HOME/.asdf/shims" "$HOME/.volta/bin"; do
+    if [ -x "$p/node" ]; then
+      export PATH="$p:$PATH"
+      break
+    fi
+  done
+fi
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "Error: Node.js (version 20 or newer) is required to run cmdx." >&2
+  echo "Please install Node.js or activate your Node environment." >&2
+  exit 1
+fi
+
+exec node /usr/share/cmdx/dist/src/cli.js "$@"
 EOF
 chmod +x "$STAGE_DIR/usr/bin/cmdx"
 
@@ -54,7 +70,7 @@ Version: ${VERSION}
 Section: utils
 Priority: optional
 Architecture: ${ARCH}
-Depends: nodejs (>= 20.0.0)
+Recommends: nodejs
 Maintainer: Gourav Mallick <gourav@example.com>
 Description: Offline-first terminal command finder with Ctrl+G shortcut
  CMDX allows developers to quickly search, inspect, and insert terminal
