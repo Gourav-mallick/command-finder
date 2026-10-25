@@ -2,6 +2,10 @@
 
 CMDX is an offline-first terminal command finder. Search a bundled catalog, inspect safe command metadata, and insert a selected command into your shell prompt. CMDX never executes a selected command.
 
+**Quick Summary:** CMDX (Command Finder) helps developers quickly locate and insert terminal commands without executing them. Ideal for scripting, learning, and productivity.
+
+**Keywords:** command-line, terminal, command finder, offline, CMDX, Node.js, React Ink, developer tools
+
 ## Requirements
 
 Node.js 20 or newer, npm, and Git. The picker runs inside the terminal using React and Ink. Check your Node.js version with `node --version` before installing.
