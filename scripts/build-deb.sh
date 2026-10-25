@@ -82,20 +82,25 @@ cat << 'EOF' > "$STAGE_DIR/DEBIAN/postinst"
 #!/usr/bin/env bash
 set -e
 
-# Add integration to /etc/bash.bashrc if present
-if [ -f /etc/bash.bashrc ] && ! grep -q "cmdx/shell" /etc/bash.bashrc; then
-  cat << 'EOCMDX' >> /etc/bash.bashrc
-
-# CMDX global shell integration (Ctrl+G)
-if [ -f /usr/share/cmdx/shell/bash.sh ]; then
-  source /usr/share/cmdx/shell/bash.sh
+# Add single-line integration to /etc/bash.bashrc if present
+if [ -f /etc/bash.bashrc ] && ! grep -q "cmdx/shell/bash.sh" /etc/bash.bashrc; then
+  echo '[ -f /usr/share/cmdx/shell/bash.sh ] && source /usr/share/cmdx/shell/bash.sh' >> /etc/bash.bashrc
 fi
-EOCMDX
+
+# Also add directly to the installing user's ~/.bashrc if run with sudo
+if [ -n "$SUDO_USER" ]; then
+  USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
+  if [ -f "$USER_HOME/.bashrc" ] && ! grep -q "cmdx/shell" "$USER_HOME/.bashrc"; then
+    echo "" >> "$USER_HOME/.bashrc"
+    echo "# CMDX Shell Integration (Ctrl+G)" >> "$USER_HOME/.bashrc"
+    echo '[ -f /usr/share/cmdx/shell/bash.sh ] && source /usr/share/cmdx/shell/bash.sh' >> "$USER_HOME/.bashrc"
+    chown "$SUDO_USER:$SUDO_USER" "$USER_HOME/.bashrc" 2>/dev/null || true
+  fi
 fi
 
 echo "=========================================================="
 echo " CMDX installed successfully!"
-echo " Reload your shell or run: source /etc/profile.d/cmdx.sh"
+echo " Restart terminal or run: source ~/.bashrc"
 echo " Press Ctrl + G in your terminal to search commands!"
 echo "=========================================================="
 exit 0
