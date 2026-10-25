@@ -121,6 +121,45 @@
         "linux"
       ],
       "risk": "medium"
+    },
+    {
+      "id": "ufw-status",
+      "name": "Check firewall rules status",
+      "command": "sudo ufw status verbose",
+      "description": "Display the active status and rules of the uncomplicated firewall (UFW).",
+      "category": "Web operations",
+      "tags": [
+        "ufw",
+        "firewall",
+        "security",
+        "status"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "ufw-allow",
+      "name": "Allow port in firewall",
+      "command": "sudo ufw allow <port>/tcp",
+      "description": "Open an incoming TCP port through the UFW firewall.",
+      "category": "Web operations",
+      "tags": [
+        "ufw",
+        "firewall",
+        "port",
+        "allow"
+      ],
+      "examples": [
+        "sudo ufw allow 80/tcp",
+        "sudo ufw allow 443/tcp"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "risk": "medium"
     }
   ]
 }

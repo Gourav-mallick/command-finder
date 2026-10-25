@@ -139,6 +139,45 @@
         "all"
       ],
       "risk": "high"
+    },
+    {
+      "id": "psql-create-db",
+      "name": "Create a PostgreSQL database",
+      "command": "createdb -h <host> -U <user> <database>",
+      "description": "Create a new PostgreSQL database on the target server.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "createdb",
+        "create"
+      ],
+      "examples": [
+        "createdb mydatabase"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "pg-isready",
+      "name": "Check PostgreSQL connection status",
+      "command": "pg_isready -h <host> -p <port>",
+      "description": "Check whether the PostgreSQL server is accepting connections.",
+      "category": "PostgreSQL",
+      "tags": [
+        "postgres",
+        "status",
+        "health",
+        "ping"
+      ],
+      "examples": [
+        "pg_isready -h localhost -p 5432"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
     }
   ]
 }

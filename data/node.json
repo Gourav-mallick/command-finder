@@ -167,6 +167,46 @@
         "all"
       ],
       "risk": "medium"
+    },
+    {
+      "id": "node-eval",
+      "name": "Evaluate inline JavaScript",
+      "command": "node -e \"<code>\"",
+      "description": "Evaluate inline JavaScript code directly in the terminal.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "eval",
+        "javascript",
+        "inline"
+      ],
+      "examples": [
+        "node -e \"console.log(1 + 1)\""
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "node-env-file",
+      "name": "Run with .env file",
+      "command": "node --env-file=.env <file.js>",
+      "description": "Execute a JavaScript file with environment variables automatically loaded from a .env file.",
+      "category": "Node.js",
+      "tags": [
+        "node",
+        "env",
+        "dotenv",
+        "environment"
+      ],
+      "examples": [
+        "node --env-file=.env src/server.js"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
     }
   ]
 }

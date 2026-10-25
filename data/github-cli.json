@@ -170,6 +170,80 @@
         "all"
       ],
       "risk": "low"
+    },
+    {
+      "id": "gh-auth-login",
+      "name": "Log in to GitHub CLI",
+      "command": "gh auth login",
+      "description": "Authenticate with your GitHub account through web browser or token.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "auth",
+        "login"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-repo-clone",
+      "name": "Clone a GitHub repository",
+      "command": "gh repo clone <repository>",
+      "description": "Clone a GitHub repository locally with git.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "repo",
+        "clone"
+      ],
+      "examples": [
+        "gh repo clone cli/cli"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-issue-create",
+      "name": "Create a new issue",
+      "command": "gh issue create",
+      "description": "Open a new issue interactively in the current repository.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "issue",
+        "create"
+      ],
+      "examples": [
+        "gh issue create --title \"Bug report\" --body \"Details...\""
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "gh-pr-create",
+      "name": "Create a pull request",
+      "command": "gh pr create",
+      "description": "Create a new pull request on GitHub for the current branch.",
+      "category": "GitHub CLI",
+      "tags": [
+        "gh",
+        "pr",
+        "create"
+      ],
+      "examples": [
+        "gh pr create --fill"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
     }
   ]
 }

@@ -10,11 +10,44 @@ CMDX is an offline-first terminal command finder. Search a bundled catalog, insp
 
 Node.js 20 or newer, npm, and Git. The picker runs inside the terminal using React and Ink. Check your Node.js version with `node --version` before installing.
 
-## Install on Linux (Ubuntu/Debian and other distributions)
+## Install on Linux (Ubuntu / Debian / Fedora / Arch)
 
-CMDX does not currently publish an Ubuntu package or an npm release, so install it from the GitHub source. After this project has been pushed, replace `YOUR-GITHUB-USERNAME` below with the GitHub account or organization that owns the repository:
+### Option 1: One-Line Auto Installer (Recommended)
 
-This is a one-time setup. Keep the checkout at `$HOME/cmdx`; after `npm link` and the Bash setup below, open a terminal and use CMDX directly. Do not clone, build, or start a background service each time.
+Run this single command to automatically download, build, set up `cmdx` globally, and configure the **Ctrl + G** shortcut in your shell:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/Gourav-mallick/command-finder/main/install.sh | bash
+```
+
+Or from a local clone:
+
+```sh
+# System-wide (with sudo):
+sudo ./install.sh
+
+# Or for current user only:
+./install.sh
+```
+
+After installation:
+1. Reload your shell: `source ~/.bashrc`
+2. Press **Ctrl + G** at any prompt to search commands and press **Enter** to insert!
+
+### Option 2: Debian / Ubuntu Package (.deb)
+
+If you prefer installing via `apt` or `dpkg`:
+
+```sh
+# Build the .deb package:
+npm run package:deb
+
+# Install package system-wide:
+sudo dpkg -i dist/cmdx_0.1.0_all.deb
+```
+This automatically configures the global `cmdx` command and the **Ctrl + G** shortcut system-wide for all users.
+
+### Option 3: Manual Installation
 
 ```sh
 git clone https://github.com/Gourav-mallick/command-finder.git "$HOME/cmdx"
@@ -25,15 +58,12 @@ npm link
 cmdx --help
 ```
 
-You do not need `sudo` for these CMDX commands. If `npm link` reports a permissions error, use a Node.js version manager such as `nvm` so npm's global directory belongs to your user; avoid running `sudo npm link`.
-
-For Bash shortcut support, add this line to `~/.bashrc`:
+To enable the Ctrl+G shortcut manually, add to `~/.bashrc`:
 
 ```bash
 source "$HOME/cmdx/shell/bash.sh"
 ```
-
-Reload the file with `source ~/.bashrc`, then press Ctrl+G at a Bash prompt. The first Enter selects and inserts a command; the next Enter in Bash executes it.
+Reload with `source ~/.bashrc`, then press **Ctrl+G**.
 
 ## Install on Windows (PowerShell)
 

@@ -169,6 +169,46 @@
         "all"
       ],
       "risk": "high"
+    },
+    {
+      "id": "redis-del",
+      "name": "Delete a key",
+      "command": "redis-cli DEL <key>",
+      "description": "Remove a specified key and its stored value from Redis.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "del",
+        "delete",
+        "key"
+      ],
+      "examples": [
+        "redis-cli DEL session:123"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "redis-ttl",
+      "name": "Check key time to live",
+      "command": "redis-cli TTL <key>",
+      "description": "Return the remaining time to live of a key that has an expiration set.",
+      "category": "Redis CLI",
+      "tags": [
+        "redis",
+        "ttl",
+        "expiry",
+        "key"
+      ],
+      "examples": [
+        "redis-cli TTL session:123"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
     }
   ]
 }

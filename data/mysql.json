@@ -118,6 +118,43 @@
         "all"
       ],
       "risk": "high"
+    },
+    {
+      "id": "mysql-create-db",
+      "name": "Create a MySQL database",
+      "command": "mysql -u <user> -p -e \"CREATE DATABASE <database>;\"",
+      "description": "Create a new database in MySQL.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "create",
+        "database"
+      ],
+      "examples": [
+        "mysql -u root -p -e \"CREATE DATABASE app_dev;\""
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mysql-ping",
+      "name": "Check MySQL server status",
+      "command": "mysqladmin -u <user> -p ping",
+      "description": "Ping the MySQL server to verify it is alive and responding.",
+      "category": "MySQL",
+      "tags": [
+        "mysql",
+        "mysqladmin",
+        "ping",
+        "status"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
     }
   ]
 }

@@ -20,6 +20,100 @@
       "risk": "low"
     },
     {
+      "id": "pnpm-add",
+      "name": "Add a dependency",
+      "command": "pnpm add <package>",
+      "description": "Add a package to project dependencies.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "add",
+        "dependencies"
+      ],
+      "examples": [
+        "pnpm add express"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "pnpm-add-dev",
+      "name": "Add a dev dependency",
+      "command": "pnpm add -D <package>",
+      "description": "Add a package to development dependencies.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "add",
+        "dev",
+        "dependencies"
+      ],
+      "examples": [
+        "pnpm add -D typescript @types/node"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "pnpm-add-global",
+      "name": "Install a global package",
+      "command": "pnpm add -g <package>",
+      "description": "Install a package globally across the system with pnpm.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "global",
+        "install"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "pnpm-remove",
+      "name": "Remove a dependency",
+      "command": "pnpm remove <package>",
+      "description": "Remove a dependency from package.json and the virtual store.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "remove",
+        "uninstall"
+      ],
+      "examples": [
+        "pnpm remove lodash"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "pnpm-update",
+      "name": "Update dependencies",
+      "command": "pnpm update",
+      "description": "Update dependencies to their latest compatible versions.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "update",
+        "upgrade"
+      ],
+      "examples": [
+        "pnpm update -i --latest"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
       "id": "pnpm-run",
       "name": "Run a pnpm script",
       "command": "pnpm run <script>",
@@ -33,6 +127,62 @@
       "examples": [
         "pnpm run build"
       ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "pnpm-dlx",
+      "name": "Execute a package without installing",
+      "command": "pnpm dlx <package>",
+      "description": "Fetch a package and execute its binary without adding it as a dependency.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "dlx",
+        "execute"
+      ],
+      "examples": [
+        "pnpm dlx create-vite"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "pnpm-list",
+      "name": "List dependencies",
+      "command": "pnpm list",
+      "description": "Show installed dependencies and dependency tree.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "list",
+        "tree"
+      ],
+      "examples": [
+        "pnpm list --depth=0"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "pnpm-store-prune",
+      "name": "Prune pnpm store",
+      "command": "pnpm store prune",
+      "description": "Remove unreferenced packages from the pnpm content-addressable store.",
+      "category": "pnpm",
+      "tags": [
+        "pnpm",
+        "store",
+        "prune",
+        "clean"
+      ],
+      "examples": [],
       "platforms": [
         "all"
       ],

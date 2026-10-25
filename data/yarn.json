@@ -20,6 +20,100 @@
       "risk": "low"
     },
     {
+      "id": "yarn-add",
+      "name": "Add a dependency",
+      "command": "yarn add <package>",
+      "description": "Add a package to project dependencies.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "add",
+        "dependencies"
+      ],
+      "examples": [
+        "yarn add react"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "yarn-add-dev",
+      "name": "Add a dev dependency",
+      "command": "yarn add -D <package>",
+      "description": "Add a package to development dependencies.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "add",
+        "dev",
+        "dependencies"
+      ],
+      "examples": [
+        "yarn add -D typescript"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "yarn-add-global",
+      "name": "Install a global package",
+      "command": "yarn global add <package>",
+      "description": "Install a package globally using Yarn v1.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "global",
+        "install"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "yarn-remove",
+      "name": "Remove a dependency",
+      "command": "yarn remove <package>",
+      "description": "Remove a dependency from package.json and node_modules.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "remove",
+        "uninstall"
+      ],
+      "examples": [
+        "yarn remove lodash"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "yarn-upgrade",
+      "name": "Upgrade dependencies",
+      "command": "yarn upgrade",
+      "description": "Upgrade packages to their latest version based on the specified range.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "upgrade",
+        "update"
+      ],
+      "examples": [
+        "yarn upgrade --latest"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
       "id": "yarn-run",
       "name": "Run a Yarn script",
       "command": "yarn <script>",
@@ -37,6 +131,59 @@
         "all"
       ],
       "risk": "medium"
+    },
+    {
+      "id": "yarn-dlx",
+      "name": "Execute a package without installing",
+      "command": "yarn dlx <package>",
+      "description": "Run a package binary in a temporary environment without adding it as a project dependency.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "dlx",
+        "execute"
+      ],
+      "examples": [
+        "yarn dlx create-react-app my-app"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "yarn-why",
+      "name": "Inspect dependency reason",
+      "command": "yarn why <package>",
+      "description": "Show why a package is installed and which dependencies depend on it.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "why",
+        "inspect"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "yarn-cache-clean",
+      "name": "Clean Yarn cache",
+      "command": "yarn cache clean",
+      "description": "Clear the local Yarn package cache directory.",
+      "category": "Yarn",
+      "tags": [
+        "yarn",
+        "cache",
+        "clean"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
     }
   ]
 }

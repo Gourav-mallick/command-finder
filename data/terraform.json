@@ -151,6 +151,44 @@
         "all"
       ],
       "risk": "low"
+    },
+    {
+      "id": "terraform-output",
+      "name": "Read output variables",
+      "command": "terraform output",
+      "description": "Extract and display output values from the current state file.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "output",
+        "state",
+        "variables"
+      ],
+      "examples": [
+        "terraform output -json"
+      ],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "terraform-state-list",
+      "name": "List resources in state",
+      "command": "terraform state list",
+      "description": "List all tracked resources in the current Terraform state.",
+      "category": "Terraform",
+      "tags": [
+        "terraform",
+        "state",
+        "list",
+        "resources"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
     }
   ]
 }

@@ -113,6 +113,48 @@
         "windows"
       ],
       "risk": "low"
+    },
+    {
+      "id": "sqlite-dump",
+      "name": "Dump SQLite database to SQL",
+      "command": "sqlite3 <database.db> \".dump\" > <dump.sql>",
+      "description": "Export the entire database schema and records as executable SQL statements.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "dump",
+        "export",
+        "backup"
+      ],
+      "examples": [],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "sqlite-table-output",
+      "name": "Query SQLite with column headers",
+      "command": "sqlite3 -header -column <database.db> \"<query>\"",
+      "description": "Run a SQL query and print readable columnar results with column headers.",
+      "category": "SQLite",
+      "tags": [
+        "sqlite",
+        "query",
+        "format",
+        "table"
+      ],
+      "examples": [
+        "sqlite3 -header -column app.db \"SELECT * FROM users LIMIT 10;\""
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "risk": "low"
     }
   ]
 }

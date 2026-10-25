@@ -118,6 +118,42 @@
         "all"
       ],
       "risk": "high"
+    },
+    {
+      "id": "mongosh-list-collections",
+      "name": "List collections in database",
+      "command": "mongosh \"<connection-string>\" --quiet --eval \"db.getCollectionNames()\"",
+      "description": "Print the names of all collections in the connected MongoDB database.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongosh",
+        "collections",
+        "list"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "mongosh-stats",
+      "name": "Show database statistics",
+      "command": "mongosh \"<connection-string>\" --quiet --eval \"db.stats()\"",
+      "description": "Display storage, collection, and index statistics for the database.",
+      "category": "MongoDB",
+      "tags": [
+        "mongodb",
+        "mongosh",
+        "stats",
+        "storage"
+      ],
+      "examples": [],
+      "platforms": [
+        "all"
+      ],
+      "risk": "low"
     }
   ]
 }
