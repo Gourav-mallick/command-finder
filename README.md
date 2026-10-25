@@ -10,11 +10,11 @@ CMDX is an offline-first terminal command finder. Search a bundled catalog, insp
 
 Node.js 20 or newer, npm, and Git. The picker runs inside the terminal using React and Ink. Check your Node.js version with `node --version` before installing.
 
-## Install on Linux (Ubuntu / Debian / Fedora / Arch)
+## Installation
 
-### Option 1: One-Line Auto Installer (Recommended)
+### Option 1: One-Line Auto Installer (Recommended for Linux)
 
-Run this single command to automatically download, build, set up `cmdx` globally, and configure the **Ctrl + G** shortcut in your shell:
+Run this single command in your terminal to automatically download, install `cmdx` globally, and configure the **<kbd>Ctrl</kbd> + <kbd>G</kbd>** shortcut:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/Gourav-mallick/command-finder/main/install.sh | bash
@@ -30,39 +30,48 @@ sudo ./install.sh
 ./install.sh
 ```
 
-After installation:
-1. Reload your shell: `source ~/.bashrc`
-2. Press **Ctrl + G** at any prompt to search commands and press **Enter** to insert!
+---
 
-### Option 2: Debian / Ubuntu Package (.deb)
+### Option 2: Debian / Ubuntu Package (`.deb`)
 
-If you prefer installing via `apt` or `dpkg`:
-
+Download the `.deb` release directly and install it via `dpkg`:
 
 ```sh
+# 1. Download the package from GitHub Releases:
+wget https://github.com/Gourav-mallick/command-finder/releases/download/v0.1.0/cmdx_0.1.0_all.deb
 
-# Install package system-wide:
-sudo dpkg -i dist/cmdx_0.1.0_all.deb
+# 2. Install the package system-wide:
+sudo dpkg -i cmdx_0.1.0_all.deb
 ```
-This automatically configures the global `cmdx` command and the **Ctrl + G** shortcut system-wide for all users.
 
-### Option 3: Manual Installation
+> **Note for developers:** If you cloned the source code, you can also build the `.deb` file yourself with `npm run package:deb` and install `dist/cmdx_0.1.0_all.deb`.
+
+---
+
+### Option 3: Manual Installation (From Source)
 
 ```sh
+# 1. Clone repository
 git clone https://github.com/Gourav-mallick/command-finder.git "$HOME/cmdx"
 cd "$HOME/cmdx"
+
+# 2. Install dependencies & build
 npm install
 npm run build
 npm link
-cmdx --help
+
+# 3. Add shortcut to your ~/.bashrc
+echo '[ -f "$HOME/cmdx/shell/bash.sh" ] && source "$HOME/cmdx/shell/bash.sh"' >> ~/.bashrc
 ```
 
-To enable the Ctrl+G shortcut manually, add to `~/.bashrc`:
+---
 
-```bash
-source "$HOME/cmdx/shell/bash.sh"
-```
-Reload with `source ~/.bashrc`, then press **Ctrl+G**.
+### 🚀 How to Use After Installation
+
+1. Open a new terminal tab (or run `source ~/.bashrc`).
+2. Press **<kbd>Ctrl</kbd> + <kbd>G</kbd>** at any prompt.
+3. Type to search (e.g. `git checkout`, `docker`, `pnpm`, `postgres`).
+4. Press **<kbd>Enter</kbd>** to insert the command into your prompt without executing it. Edit parameters if needed, then hit Enter to run!
 
 ## Install on Windows (PowerShell)
 
@@ -111,7 +120,7 @@ npm run build
 
 `npm link` points to the checkout, so it normally does not need to be run again after an update. Once CMDX is published as an npm package, users will be able to update it with npm; that release is not available yet.
 
-The current global command is linked to the source checkout, which must remain on disk. A standalone installer such as an Ubuntu `.deb` or a Windows installer is not available yet. After the repository and npm package are published, installation can be reduced to a global package install without keeping a source checkout.
+The `install.sh` script and Ubuntu/Debian `.deb` package provide standalone installation without requiring manual symlinks. For source checkouts, `npm link` points to the local directory.
 
 ## Usage
 
