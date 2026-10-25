@@ -13,7 +13,7 @@ CMDX does not currently publish an Ubuntu package or an npm release, so install 
 This is a one-time setup. Keep the checkout at `$HOME/cmdx`; after `npm link` and the Bash setup below, open a terminal and use CMDX directly. Do not clone, build, or start a background service each time.
 
 ```sh
-git clone https://github.com/YOUR-GITHUB-USERNAME/cmdx.git "$HOME/cmdx"
+git clone https://github.com/Gourav-mallick/command-finder.git "$HOME/cmdx"
 cd "$HOME/cmdx"
 npm install
 npm run build
@@ -38,7 +38,7 @@ Install Git and Node.js 20 or newer first. In PowerShell, replace `YOUR-GITHUB-U
 This is a one-time setup. Keep the checkout at `$HOME\cmdx`; after `npm link` and the PowerShell profile setup below, open PowerShell and use CMDX directly.
 
 ```powershell
-git clone https://github.com/YOUR-GITHUB-USERNAME/cmdx.git "$HOME\cmdx"
+git clone https://github.com/Gourav-mallick/command-finder.gitt "$HOME\cmdx"
 Set-Location "$HOME\cmdx"
 npm install
 npm run build
